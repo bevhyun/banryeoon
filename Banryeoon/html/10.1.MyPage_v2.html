@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mypage</title>
+    <link rel="stylesheet" href="../css/10.1.MyPage_v2.css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/common.css">
+
+</head>
+<body>
+
+    <header>
+        <div class="header_top">
+            <div class="content_box">
+                <div class="area_box">
+                    <div class="h_t_box">
+                        <a href="">
+                            <div class="h_logo_word_box">
+                            <img src="../img/logo.word.png" alt="반려온(사이트이름)" class="h_logo_word">
+                    </div>
+                    </a>
+                    <div class="join_bar">
+                        <a href=""><div class="login ">로그아웃</div></a>
+                        <a href=""><div class="join">MyPage</div></a>
+                    </div>
+                        
+                </div>
+                <div class="h_t_desc">유기하지말고 반려온!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="h_img_box">
+            <img src="" alt="" class="h_logo_img"> 로고 들어갈것
+        </div>
+    </header>
+
+
+    <nav>
+        <div class="nav_bar">
+            <div class="area_box">
+                <div class="area_box nav_box">
+                    <ul class="nav_ul">
+                        <li class="nav_li">기업소개</li>
+                        <li class="nav_li">분양절차</li>
+                        <li class="nav_li">고양이/강아지 입양</li>
+                        <li class="nav_li">우리아기 자랑</li>
+                        <li class="nav_li">제품구매</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav_page">
+            <ul class="nav_page_ul">
+                <li class="nav_page_intro">
+    
+                        <div class="np"><a href="">기업소개</a></div>
+                        <div class="np"><a href="">반려온 이벤트</a></div>
+                    
+                </li>
+
+                <li class="nav_page_process">
+    
+                        <div class="np"><a href="">분양소개</a></div>
+                
+                </li>
+
+                <li class="nav_page_adopt">
+    
+                        <div class="np"><a href="">고양이 입양</a></div>
+                        <div class="np"><a href="">강아지 입양</a></div>
+                    
+                </li>
+
+                
+                <li class="nav_page_review">
+    
+                        <div class="np"><a href="">입양 후기</a></div>
+                
+                </li>
+
+            <li class="nav_page_merchan">
+                    <div class="np"><a href="">고양이 제품</a></div>
+                    <div class="np"><a href="">강아지 제품</a></div>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+
+<!-- 사이드바 -->
+ <div class="tab_box">
+    <div class="sidebar">
+        <div class="sidebar-header">My Page</div>
+        <ul class="sidebar-tabs" id="sidebar-tabs">
+           
+            <li class="tab-item active" data-tab="tab1">프로필</li>
+            <li class="tab-item" data-tab="tab2">입양내역</li>
+            <li class="tab-item" data-tab="tab3">인증 관리 수첩</li>
+             <li class="tab-item" data-tab="tab4">장바구니/쿠폰</li>
+            <li class="tab-item" data-tab="tab5">회원탈퇴</li>
+        </ul>
+     
+    </div>
+
+<!-- 콘텐츠 영역 -->
+
+<div class="content">
+        
+
+
+<!-- 프로필 수정 팝업 -->
+
+
+<!-- 프로필 수정 -->
+
+        <div id="tab1" class="tab-content active">
+            <h2 class="content-header">프로필 수정</h2>
+            <form action="#" id="myForm">
+                <div class="profile_content">
+                    <div class="photo_box">
+                        <div class="photo">
+                            <img src="../img/black-dog-paw.png" alt="">
+                        </div>
+                        <a href=""><div class="photo_upload_btn">*파일선택</div></a>
+                    </div>
+                    
+                    <div class="id">
+                        <input type="text" placeholder="아이디* (영소문자/숫자, 4~16자)" id="uid" name="u_id">
+                        <div class="id_msg">아이디를 입력해주세요.</div>
+                    </div>
+                        <input type="password" placeholder="비밀번호* (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)" class="psw i_type1" name="u_psw" required>
+                        <input type="password" placeholder="비밀번호 확인*" class="psw_chk i_type1" name="confrim_psw">
+                        <input type="text" placeholder="이름*" class="u_name i_type1"  name="name" required>
+                    <div class="tele">
+                        <select name="" id="sel" name="phone_n_frist">
+                            <option value="-1">선택</option>
+                            <option value="010">010</option>
+                            <option value="016">016</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                        </select> - 
+                        
+                        <input type="tel" name="phone_n" name="phone_n_middle" placeholder="전화번호*"> - 
+                        <input type="tel" name="phone_n_last">
+                     </div>
+                    
+        
+                    <input type="text" class="u_emali i_type1" name="u_main" placeholder="이메일*">
+    
+                    <div class="birth_radio">
+                        <label for="rd_y1">
+                            <input type="radio" name="birthh" id="rd_y1" value="sun" checked>양력
+                        </label>
+                        <label for="rd_u1">
+                            <input type="radio" name="birthh" id="rd_u1" value="moon">음력
+                        </label>
+                    </div>
+        
+                    <div class="birthday">
+                        <input type="tel"> 년
+                        <input type="tel"> 월
+                        <input type="tel"> 일
+                    </div>
+                </div>
+                <div class="btn_box" >
+                    <input type="submit" id="modify_submit" value="수정" class="pro_modify_btn">
+                    <input type="reset"  id="resetBtn" value="reset" class="reset_btn">
+                </div>
+            </form>
+        </div>
+
+
+<!-- 입양 내역 -->
+
+    <div id="tab2" class="tab-content">
+        <h2 class="content-header">입양내역</h2>
+           
+                <div class="adopt_record_title">입양 기록이 있습니다.</div> 
+                
+                <div class="adopt_record_box">
+                    <div class="adopt_record_pic"><img src="../img/가나디3.jpeg" alt=""></div>
+                    <div class="adopt_record">
+                        <div class="record_info adopt_record_no">
+                            <div>입양번호: </div>
+                            <div>D10041234</div>
+                        </div>
+                        <div class="record_info adopt_record_date">
+                            <div>입양 날짜: </div>
+                            <div>2025-04-01</div>
+                        </div>
+                        <div class="record_info adopt_record_name">
+                            <div>이름: </div>
+                            <div>조이</div>
+                        </div>
+                        <div class="record_info adopt_record_gender">
+                            <div>성별: </div>
+                            <div>(여)</div>
+                        </div>
+                        <div class="record_info adopt_record_age">
+                            <div>나이: </div>
+                            <div>2살</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="adopt_record_option">
+                   <a href=""><button class="chk_medical">접종 확인하기</button></a> 
+                    <a href=""><button class="chk_merchan">필요한 상품 보러가기</button></a>
+                    <a href=""><button class="chk_event">함께하는 이벤트</button></a>
+                </div>
+
+           
+
+        </div>
+
+
+
+
+
+
+
+
+    <!-- 인증 수첩 -->
+     <div id="tab3" class="tab-content">
+  <h2 class="content-header">인증 수첩</h2>
+  <div class="record_box">
+    <div class="no_adopt_record">아이가 얼마나 잘 지내고 있는지 알려주세요!</div>
+    <div class="no_adopt_record_c">2차 필수 인증 완료하면! 우리아이 건강 종합 영양제 쿠폰을 드려요!</div>
+    <div class="no_adopt_record_c">4차 선택 인증 완료하면! 15만원 상당의 건강검진 쿠폰을 드려요!</div>
+
+
+    <div class="document">
+      <form action="#">
+            <div class="docu_2_box db">
+            <div class="chk_box">
+                <div class="checkbox"> <span class="required">[필수]</span> 1차 인증(3개월 차)</div>
+                <div class="chk_mark">∨</div>
+            </div>
+            <div class="docu_regulation">
+
+            <textarea name="" class="" placeholder="내용을 입력하세요" rows="50" cols="100"></textarea>
+            <div class="f_d_s">
+                <input type="file">
+                <button class="docu_submit">제출</button>
+            </div>
+
+            </div>
+        </div>
+      
+      </form>  
+      
+
+       <form action="#">
+            <div class="docu_2_box db">
+            <div class="chk_box">
+                <div class="checkbox"> <span class="required">[필수]</span> 2차 인증(6개월 차)</div>
+                <div class="chk_mark">∨</div>
+            </div>
+            <div class="docu_regulation">
+
+            <textarea name="" class="" placeholder="내용을 입력하세요" rows="50" cols="100"></textarea>
+            <div class="f_d_s">
+                <input type="file">
+                <button class="docu_submit">제출</button>
+            </div>
+
+            </div>
+        </div>
+      
+      </form>  
+
+      
+        <form action="#">
+            <div class="docu_2_box db">
+            <div class="chk_box">
+                <div class="checkbox"> [선택] 3차 인증(9개월 차)</div>
+                <div class="chk_mark">∨</div>
+            </div>
+            <div class="docu_regulation">
+
+            <textarea name="" class="" placeholder="내용을 입력하세요" rows="50" cols="100"></textarea>
+            <div class="f_d_s">
+                <input type="file">
+                <button class="docu_submit">제출</button>
+            </div>
+
+            </div>
+        </div>
+      
+      </form>  
+
+
+        <form action="#">
+            <div class="docu_2_box db">
+            <div class="chk_box">
+                <div class="checkbox"> [선택] 4차 인증(12개월 차)</div>
+                <div class="chk_mark">∨</div>
+            </div>
+            <div class="docu_regulation">
+
+            <textarea name="" class="" placeholder="내용을 입력하세요" rows="50" cols="100"></textarea>
+            <div class="f_d_s">
+                <input type="file">
+                <button class="docu_submit">제출</button>
+            </div>
+
+            </div>
+        </div>
+      
+      </form>  
+    </div>
+  </div>
+</div>
+
+
+<div id="tab4" class="tab-content">
+            <h2 class="content-header">장바구니/쿠폰</h2>
+            <p>나의 장바구니 및 쿠폰 확인</p>
+
+            <div class="coupon_box">
+                <div class="coupon_title">
+                    <div class="coupon_ptitle">쿠폰</div>
+                    <div class="coupon_no_title">개수:</div>
+                    <div class="coupon_no">1 개</div>
+                </div>
+                <div class="coupon_detail">
+                    <div class="coupon_Sqeno_box">
+                        <div class="coupon_Sqeno_title">쿠폰 번호: </div>
+                        <div class="coupon_Sqeno">C12345678</div>
+                    </div>
+                    
+                    <div class="coupon_content">로즈힙 바이탈 케이나인 종합영양제 150g</div>
+                    
+                    <div class="c_end_date_box">
+                        <div class="c_end_date_title">유효기간:</div>
+                        <div class="c_end_date"> 2025-12-31 까지</div>
+                    </div>
+                     
+                </div>
+                <button class="c_use">사용하기</button>
+                
+                
+                  
+            </div>
+
+
+            <div class="bag_box">
+                <div class="bag_title">
+                    <div class="shopping_bag">장바구니</div>
+                    <img src="../img/shopping-basket_679814.png" alt="" class="shopping_bag_img">
+                    
+                </div>
+                
+                <div class="product_shopping_bag">
+                    <div class="product_box">
+                        <div class="product_list_1">
+                            <div class="product">제품: </div>
+                            <div class="product_title">포앤츄 [마이펫파티쉐리] 산양유요거트 동결건조 트릿 (망고)</div>
+                        </div>
+                        <div class="product_content">
+                            <img src="../img/산양유 트릿 154210.png" alt="" class="product_img">
+                            <div class="product_desc">산양유요거트 동결건조 트릿은 산양유를 발효시켜 유산균을 재배양하고, 마지막으로 동결건조 과정을 거치는 영양간식 입니다. 블루베리맛/라즈베리맛/플레인/망고/하이브리드(4종믹스) 제품입니다.</div>
+                        </div>
+                        <div class="item">
+                            <input type="checkbox" class="product" data-price="10000" id="item1">
+                            <label for="item1">가격 - 10,000원</label>
+                        </div>
+                </div>
+
+                <div class="total">총 합계: <span id="totalAmount">0</span>원</div>
+                <button class="buying_btn">구매하기</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <!-- 회원탈퇴 -->
+
+        <div id="tab5" class="tab-content">
+            <h2 class="content-header">회원탈퇴</h2>
+            <div class="warning-box">
+                <div class="warning-title">탈퇴 전 꼭 확인해주세요</div>
+                <p class="warning-text">
+                    회원 탈퇴 시 모든 개인정보와 서비스 이용 기록이 삭제되며, 이는 복구가 불가능합니다.
+                    탈퇴 전 필요한 데이터는 미리 백업해 주시기 바랍니다.
+                </p>
+            </div>
+            
+            <div class="info-list">
+                <div class="info-item">탈퇴 시 모든 개인정보는 즉시 삭제되며 복구할 수 없습니다.</div>
+                <div class="info-item">작성한 게시글, 댓글 등의 콘텐츠는 삭제되지 않을 수 있습니다.</div>
+                <div class="info-item">현재 사용 중인 쿠폰 및 포인트는 모두 소멸됩니다.</div>
+                <div class="info-item">탈퇴 후 30일간 동일한 계정으로 재가입이 제한됩니다.</div>
+                <div class="info-item">입양을 받은 기록이 있다면 최소 6개월 동안은 회원탈퇴가 불가합니다.</div>
+            </div>
+            
+            <div class="confirmation-checkbox">
+                <input type="checkbox" id="confirmCheckbox">
+                <label for="confirmCheckbox">위 내용을 모두 확인하였으며, 탈퇴 시 발생하는 데이터 손실에 동의합니다.</label>
+            </div>
+            
+            <div class="button-group">
+                <button class="cancel-btn" id="cancelButton">취소</button>
+                <button class="withdraw-btn" id="withdrawButton">회원 탈퇴</button>
+            </div>
+        </div>
+        </div>
+        
+        <!-- 확인 모달 -->
+        <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <div class="modal-title">정말 회원 탈퇴 하시겠습니까?</div>
+            <p>탈퇴하시면 모든 정보가 삭제되며 복구할 수 없습니다.</p>
+            <div class="modal-buttons">
+                <button class="modal-cancel" id="modalCancelButton">취소</button>
+                <button class="modal-confirm" id="modalConfirmButton">탈퇴하기</button>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+ </div>
+
+
+
+
+
+ <footer class="footer_box">
+    <div class="area_box">
+        <div class="footer_title">
+            반려온은 유기견과 유기묘의 따뜻한 집을 찾는 여정을 돕는 플랫폼입니다. 새로운 가족을 만나기 위한 첫걸음을 함께해 주세요.
+        </div>
+        <div class="fotter_info">
+            전화: 02-1234-1004<br>
+            이메일: support@banryeon.com
+        </div>
+
+        <div class="footer_role">이용 약관</div>
+        <div class="footer_role"><a href="#">이용약관 | 개인정보처리방침</a></div>
+
+        <div class="footer_name">Copyright © 2025 반려온(溫). All rights reserved.</div>
+
+
+
+    </div>
+</footer>
+
+
+<script src="../js/mypage.js"></script>
+<script src="../js/mainpage.js"></script>
+<script src="../js/mypage_ver2.js"></script>
+</body>
+</html>

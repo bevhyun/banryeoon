@@ -1,0 +1,21 @@
+<!-- ##################### FOOTER ##################### -->
+
+<footer class="footer_box">
+    <div class="area_box">
+        <div class="footer_title">
+            반려온은 유기견과 유기묘의 따뜻한 집을 찾는 여정을 돕는 플랫폼입니다. 새로운 가족을 만나기 위한 첫걸음을 함께해 주세요.
+        </div>
+        <div class="fotter_info">
+            전화: 02-1234-1004<br>
+            이메일: support@banryeon.com
+        </div>
+
+        <div class="footer_role">이용 약관</div>
+        <div class="footer_role"><a href="#">이용약관 | 개인정보처리방침</a></div>
+
+        <div class="footer_name">Copyright © 2025 반려온(溫). All rights reserved.</div>
+
+
+
+    </div>
+</footer>

@@ -1,0 +1,230 @@
+/* 가장 위에 있는 [ 상품 상세보기 타이틀 ] */
+.product_detail_title{
+    width: 80%;
+    margin: 70px auto;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #444;
+    text-align: left;
+}
+
+/* 상품 정보 영역 */
+.product_info{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    border: 1px solid #444;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 60px;
+}
+
+/* 제품 이미지 */
+.product_img{
+    width: 40%;
+    padding: 30px 20px 30px 30px;
+}
+
+/* 상품 이미지 옆에 상품이름, 설명, 가격, 등등 표시하는 영역 */
+.product_area{
+    width: 60%;
+    padding: 50px 30px;
+}
+
+.product_desc_area{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.product_desc_img{
+    width: 100%;
+}
+
+/* -------- 제품설명 공간 --------- */
+/* 상품 이름 */
+.product_name{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* 상품 가격 */
+.product_price{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+/* 상품 설명 */
+.product_description{
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2;
+}
+
+.product_num, .post_id, .rproduct_created_txt, .rproduct_created_at{
+    margin-top: 4px;
+    font-size: 12px;
+    color: #949494;
+    text-align: right;
+}
+
+/* 주문수량 선택과 가격측정 */
+        
+        .product_price {
+            font-weight: bold;
+            color: #333;
+        }
+        .quantity_selector {
+            margin-bottom: 20px;
+        }
+        
+        .quantity_label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .quantity_dropdown {
+            position: relative;
+        }
+        
+        .quantity_btn {
+            width: 100%;
+            padding: 10px 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .quantity_btn:hover {
+            border-color: #bbb;
+        }
+        
+        .quantity_btn-text {
+            font-weight: 500;
+        }
+        
+        .arrow_icon {
+            transition: transform 0.2s;
+        }
+        
+        .arrow_down {
+            transform: rotate(0deg);
+        }
+        
+        .quantity_options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 5px;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        
+        .quantity_options.show {
+            display: block;
+        }
+        
+        .quantity_option {
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .quantity_option:hover {
+            background-color: #ffe187;
+        }
+        
+        .quantity_option.selected {
+            background-color: #e6f7ff;
+            color: #1890ff;
+            font-weight: 500;
+        }
+        
+        .action_buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .btn_cart {
+            background-color: #fffbf2;
+            color: #f2bf4a;
+            border: 1px solid #ffe187;
+        }
+        
+        .btn_cart:hover {
+            background-color: #d6eeff;
+        }
+        
+        .btn_buy {
+            background-color: #f2bf4a;
+            color: white;
+        }
+        
+        .btn_buy:hover {
+            background-color: #e2b03c;
+        }
+        
+        .quantity_result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .quantity_value {
+            font-weight: bold;
+            color: #1890ff;
+        }
+        
+        .price_breakdown {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+        }
+        
+        .subtotal, .shipping_fee {
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+        
+        .shipping_fee .free {
+            color: #52c41a;
+            font-weight: 500;
+        }
+        
+        .total_price_display {
+            margin-top: 10px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        .total_price_value {
+            color: #f5222d;
+            font-weight: 700;
+        }
