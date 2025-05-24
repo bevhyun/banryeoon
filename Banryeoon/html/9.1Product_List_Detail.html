@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>banryeoon</title>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/0.header2.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -11,8 +11,9 @@
     <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 <body>
-        <header>
+    <header>
         <div class="header_top">
+            <div class="h_t_desc">유기하지말고 반려온!</div>
             <div class="content_box">
                 <div class="area_box">
                     <div class="h_t_box">
@@ -27,13 +28,13 @@
                     </div>
                         
                 </div>
-                <div class="h_t_desc">유기하지말고 반려온!</div>
+
                 </div>
             </div>
         </div>
 
         <div class="h_img_box">
-            <img src="" alt="" class="h_logo_img"> 로고 들어갈것
+            <img src="../img/banryeoonlogo.png" alt="" class="h_logo_img">
         </div>
     </header>
 
@@ -113,49 +114,64 @@
                     </div>
 
                     <hr>
-                    
-                    <div class="product-container">
-                        
-                        <div class="quantity_selector">
-                            <label class="quantity_label">수량</label>
-                            <div class="quantity_dropdown">
-                                <button class="quantity_btn" id="quantityBtn" onclick="toggleOptions()">
-                                    <span class="quantity-btn-text">1개</span>
-                                    <span class="arrow_icon arrow_down">▼</span>
-                                </button>
-                                <div class="quantity_options" id="quantityOptions">
-                                    <div class="quantity_option selected" data-value="1" onclick="selectQuantity(1)">1개</div>
-                                    <div class="quantity_option" data-value="2" onclick="selectQuantity(2)">2개</div>
-                                    <div class="quantity_option" data-value="3" onclick="selectQuantity(3)">3개</div>
-                                    <div class="quantity_option" data-value="4" onclick="selectQuantity(4)">4개</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="action_buttons">
-                            <button class="btn btn_cart" onclick="addToCart()">장바구니 담기</button>
-                            <button class="btn btn_buy" onclick="buyNow()">바로구매</button>
-                        </div>
-                        
-                        <div class="quantity_result">
-                            선택된 수량: <span class="quantity_value" id="selectedQuantity">1</span>개
-                            <div class="price_breakdown">
-                                <!-- <div class="subtotal">상품금액: <span id="subtotalPrice">76,000</span>원</div> -->
-                                <div class="product_details">
-                                    <p class="product_price">1개 × <span id="productPrice">76,000</span>원 = <span id="totalPrice">76,000</span>원</p>
-                                </div>
-                                <div class="shipping_fee">배송비: <span id="shippingFee">5,000</span>원 ( 10만원 이상 무료배송 )</div>
-                            </div>
-                            <div class="total_price_display">
-                                총액: <span class="total_price_value" id="displayTotalPrice">81,000</span>원
-                            </div>
-                        </div>
+
+                
+                <p class="total-price"><span id="quantity">2</span>개 × <span id="unitPrice">76,000</span>원 = <span id="totalPrice">152,000</span>원</p>
+                
+                <div class="quantity-selector">
+                    <label for="quantitySelect">수량</label>
+                    <select id="quantitySelect">
+                        <option value="1">1개</option>
+                        <option value="2" selected>2개</option>
+                        <option value="3">3개</option>
+                        <option value="4">4개</option>
+                        <option value="5">5개</option>
+                    </select>
+                </div>
+                
+                <div class="button-group">
+                    <button class="cart-button" id="cartButton">장바구니 담기</button>
+                    <button class="buy-button" id="buyButton">바로구매</button>
+                </div>
+
+                <!-- <div class="action-buttons">
+                    <form id="cartForm" action="/cart/add" method="post">
+                        <input type="hidden" name="productId" value="product123">
+                        <input type="hidden" name="productName" value="겐츠 로드 스틱">
+                        <input type="hidden" name="quantity" id="cart_quantity" value="1">
+                        <input type="hidden" name="price" value="76000">
+                        <input type="hidden" name="subtotal" id="cart_subtotal" value="76000">
+                        <input type="hidden" name="shippingFee" id="cart_shippingFee" value="5000">
+                        <input type="hidden" name="total" id="cart_total" value="81000">
+                        <button type="submit" class="btn btn-cart">장바구니 담기</button>
+                    </form>
+                    <form id="buyForm" action="/order/direct" method="post">
+                        <input type="hidden" name="productId" value="product123">
+                        <input type="hidden" name="productName" value="겐츠 로드 스틱">
+                        <input type="hidden" name="quantity" id="buy_quantity" value="1">
+                        <input type="hidden" name="price" value="76000">
+                        <input type="hidden" name="subtotal" id="buy_subtotal" value="76000">
+                        <input type="hidden" name="shippingFee" id="buy_shippingFee" value="5000">
+                        <input type="hidden" name="total" id="buy_total" value="81000">
+                        <button type="submit" class="btn btn-buy">바로구매</button>
+                    </form>
+                </div> -->
+                
+
+                <div class="order-details">
+                    <p>선택된 수량: <span id="selectedQuantity">2</span>개</p>
+                    <p>상품금액: <span id="finalPrice">152,000</span>원</p>
+                    <p>배송비: <span>무료</span> (10만원 이상 무료배송)</p>
+                    <p>총액: <span class="highlight" id="finalTotal">152,000</span>원</p>
+                </div>
+
+    <div class="product_code">
+        <p>상품번호: 10041004</p>
+        <p>상품등록일: 20250112</p>
+    </div>
+
                     </div>
 
-                <!-- 상품 고유 ID -->
-                <div class="product_num">상품번호: <span class="post_id">10041004</span></div>
-                <!-- 상품등록일 -->
-                <div class="rproduct_created_txt">상품등록일: <span class="rproduct_created_at">20250112</span></div>
 
 
                 </div>
