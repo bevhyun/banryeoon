@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitstudy.app.mapper.UserMapper">
+
+    <select id="selectAllUsers" resultType="com.bitstudy.app.dto.UserDto">
+        SELECT * FROM banryeoon_db.user
+    </select>
+
+    <select id="selectUserBySeqno" parameterType="int" resultType="com.bitstudy.app.dto.UserDto">
+        SELECT * FROM banryeoon_db.user where userSeqno = #{userSeqno}
+    </select>
+
+    <insert id="insertUser" parameterType="com.bitstudy.app.dto.UserDto">
+        INSERT INTO banryeoon_db.user (
+            userSeqno, userId, userPw, userName, userPhone, userEmail, userBirth
+        ) VALUES (
+                     #{userSeqno}, #{userId}, #{userPw}, #{userName}, #{userPhone}, #{userEmail}, #{userBirth}
+                 )
+    </insert>
+
+    <update id="updateUser" parameterType="com.bitstudy.app.dto.UserDto">
+        UPDATE banryeoon_db.user
+        SET
+            userId = #{userId},
+            userPw = #{userPw},
+            userName = #{userName},
+            userPhone = #{userPhone},
+            userEmail = #{userEmail},
+            userBirth = #{userBirth}
+        WHERE userSeqno = #{userSeqno}
+
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM banryeoon_db.user WHERE userSeqno = #{userSeqno}
+    </delete>
+
+<!-- ========================== admin ========================== -->
+
+<!--  admin에서 회원관리할때 seqno, 이메일, 이름, 가입일, 분양여부 불러오기  -->
+    <select id="adminuserselect" resultType="com.bitstudy.app.dto.UserDto">
+        SELECT userSeqno, userEmail, userName, userPhone, userBirth FROM banryeoon_db.user
+    </select>
+
+    <!-- admin에서 회원관리할때 이메일 조회하는 방법 -->
+    <select id="adminsearchPEmail" parameterType="string" resultType="com.bitstudy.app.dto.UserDto">
+        SELECT * FROM banryeoon_db.user WHERE userEmail LIKE CONCAT('%', #{userEmail}, '%')
+    </select>
+
+    <!-- admin에서 회원관리할때 이름으로 조회하는 방법 -->
+    <select id="adminsearchPName" parameterType="string" resultType="com.bitstudy.app.dto.UserDto">
+        SELECT * FROM banryeoon_db.user WHERE userName LIKE CONCAT('%', #{userName}, '%')
+    </select>
+
+    <!-- admin에서 회원관리할때 seqno 조회하는 방법 -->
+    <select id="adminsearchPSeqno" parameterType="int" resultType="com.bitstudy.app.dto.UserDto">
+        SELECT * FROM banryeoon_db.user WHERE userSeqno LIKE CONCAT('%', #{userSeqno}, '%')
+    </select>
+
+    <!-- 전달된 파라미터 aniSeqno에 해당하는 유저 삭제 -->
+    <delete id="deleteUserBySeqno" parameterType="int">
+        DELETE FROM banryeoon_db.user
+        WHERE userSeqno = #{userSeqno}
+    </delete>
+
+<!--  페이지네이션  -->
+    <!-- 1) 전체 사용자 수 조회 -->
+    <select id="AdminselectUserCount" resultType="int">
+        SELECT COUNT(*)
+        FROM banryeoon_db.user
+    </select>
+
+    <!-- 2) 페이징 처리된 사용자 목록 조회 -->
+    <select id="AdminselectUserList" parameterType="map" resultType="com.bitstudy.app.dto.UserDto">
+        SELECT userSeqno,
+               userEmail,
+               userName,
+               userPhone,
+               userBirth
+        FROM banryeoon_db.user
+        ORDER BY userSeqno DESC
+        LIMIT #{offset}, #{limit}
+    </select>
+
+
+
+</mapper>
