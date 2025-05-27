@@ -28,6 +28,14 @@ public class AnimalDaoImpl implements AnimalDao {
     public List<AnimalDto> selectAllAnimal() {
         return session.selectList(namespace + "selectAllAnimal");
     }
+    @Override
+    public List<AnimalDto> selectAnimalDog() {
+        return session.selectList(namespace + "selectAnimalDog");
+    }
+    @Override
+    public List<AnimalDto> selectAnimalCat() {
+        return session.selectList(namespace + "selectAnimalCat");
+    }
 
     // 입양 동물 상세정보 불러오는 코드
     @Override

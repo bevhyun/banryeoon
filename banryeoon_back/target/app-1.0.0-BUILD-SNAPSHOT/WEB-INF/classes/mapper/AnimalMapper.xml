@@ -15,6 +15,20 @@
         SELECT * FROM animal;
     </select>
 
+<!--  강아지 정보만 다 불러오는 코드  -->
+    <select id="selectAnimalDog" parameterType="int" resultType="com.bitstudy.app.dto.AnimalDto">
+        SELECT aniSeqno, aniTypeCd, aniBreed, SUBSTRING_INDEX(aniHappenPlace, ' ', 1) AS aniHappenPlace, aniImg1
+        FROM banryeoon_db.animal
+        WHERE aniTypeCd = 100;
+    </select>
+
+<!--  고양이 정보만 다 불러오는 코드  -->
+    <select id="selectAnimalCat" parameterType="int" resultType="com.bitstudy.app.dto.AnimalDto">
+        SELECT aniSeqno, aniTypeCd, aniBreed, SUBSTRING_INDEX(aniHappenPlace, ' ', 1) AS aniHappenPlace, aniImg1
+        FROM banryeoon_db.animal
+        WHERE aniTypeCd = 200;
+    </select>
+
 
 <!-- 동물 검색하는 매퍼@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 

@@ -13,6 +13,8 @@ public interface AnimalDao {
 
     // 동물의 상세정보를 다 불러오기
     List<AnimalDto> selectAllAnimal();
+    List<AnimalDto> selectAnimalDog();
+    List<AnimalDto> selectAnimalCat();
 
     // 검색어(keyword)를 받아서 리스트 반환
     List<AnimalDto> searchByBreed(@Param("aniBreed") String aniBreed);

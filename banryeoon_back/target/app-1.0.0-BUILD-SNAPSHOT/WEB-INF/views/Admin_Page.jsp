@@ -133,6 +133,8 @@
               <input type="hidden" name="aniPage" value="${aniCurrentPage}" />
               <!-- adpPage도 그대로 유지 -->
               <input type="hidden" name="adpPage" value="${adpCurrentPage}" />
+              <input type="hidden" name="prodPage"    value="${prodCurrentPage}" />
+              <input type="hidden" name="postPage" value="${postCurrentPage}" />
 
               <!-- 검색 기준 -->
               <select name="searchType" id="userManage">
@@ -244,7 +246,7 @@
       <!-- 페이지네이션 끝 -->
   </div>
 
-  <!-- 동물 조회 탭 -->
+  <!-- 동물 조회 탭 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
   <div id="tab2" class="tab-content aniManage_bar">
     <h2 class="content-header">
 <%--        <a href="/adminpage/animal?page=1">--%>
@@ -252,31 +254,14 @@
 <%--        </a>--%>
     </h2>
 
-<%--    <div class="search_bar">--%>
-<%--      <select name="animal_manage" id="aniManage">--%>
-<%--        <option value="breed">종류</option>--%>
-<%--        <option value="region">지역</option>--%>
-<%--        <option value="num">seq.no</option>--%>
-<%--      </select>--%>
-
-<%--      <div class="search-container">--%>
-<%--&lt;%&ndash;        <input type="text" class="search-input" placeholder="검색어를 입력하세요">&ndash;%&gt;--%>
-<%--&lt;%&ndash;        <button class="search-button">검색</button>&ndash;%&gt;--%>
-<%--        <div class="search-container">--%>
-<%--            <form action="/adminpage#tab2" method="get" class="admin_search_form">--%>
-<%--                <input class="search-input" type="text" id="search" name="query" placeholder="검색어를 입력하세요" value="${param.keyword}">--%>
-<%--                <button class="search-button" type="submit">검색</button>--%>
-<%--            </form>--%>
-<%--        </div>--%>
-<%--      </div>--%>
-<%--    </div>--%>
-
       <div class="search_bar">
           <form action="/adminpage#tab2" method="get" class="admin_search_form">
               <!-- 탭 및 페이징 파라미터 유지 -->
               <input type="hidden" name="userPage" value="${userCurrentPage}" />
               <input type="hidden" name="aniPage"  value="1" />              <!-- 검색 후 1페이지로 -->
               <input type="hidden" name="adpPage"  value="${adpCurrentPage}" />
+              <input type="hidden" name="prodPage"    value="${prodCurrentPage}" />
+              <input type="hidden" name="postPage" value="${postCurrentPage}" />
 
               <!-- 검색 기준 -->
               <select name="searchType" id="aniManage">
@@ -291,6 +276,8 @@
                          type="text"
                          id="search"
                          name="query"
+
+
                          placeholder="검색어를 입력하세요"
                          value="${param.query}" />
                   <button class="search-button" type="submit">검색</button>
@@ -390,81 +377,120 @@
       <!-- 페이지네이션 끝 -->
   </div>
 
-  <!-- 자랑 게시판 관리 탭 -->
-  <div id="tab3" class="tab-content">
-    <h2 class="content-header">자랑 게시판 관리</h2>
 
-    <div class="search_bar">
-      <select name="board_manage" id="MemManage">
-        <option value="writer+title">글쓴이+제목</option>
-        <option value="title">제목</option>
-        <option value="writer">글쓴이</option>
-      </select>
 
-      <div class="search-container">
-        <input type="text" class="search-input" placeholder="검색어를 입력하세요">
-        <button class="search-button">검색</button>
-      </div>
+    <!-- 자랑 게시판 관리 탭 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+    <div id="tab3" class="tab-content">
+        <h2 class="content-header">자랑 게시판 관리</h2>
+
+        <!-- 검색 바 -->
+        <div class="search_bar">
+            <form action="/adminpage#tab3" method="get" class="admin_search_form">
+                <!-- 다른 탭들의 페이징 파라미터 유지 -->
+                <input type="hidden" name="userPage" value="${userCurrentPage}" />
+                <input type="hidden" name="aniPage"  value="${aniCurrentPage}" />
+                <input type="hidden" name="adpPage"  value="${adpCurrentPage}" />
+                <input type="hidden" name="prodPage" value="${prodCurrentPage}" />
+                <input type="hidden" name="postPage" value="1" />
+
+                <!-- 기존 4개 탭의 검색 파라미터 유지 -->
+                <input type="hidden" name="searchType" value="${searchType}" />
+                <input type="hidden" name="query" value="${query}" />
+
+                <!-- 자랑게시판 전용 검색 기준 -->
+                <select name="postSearchType" id="postManage">
+                    <option value="writer+title" ${postSearchType=='writer+title' ? 'selected':''}>글쓴이+제목</option>
+                    <option value="title"        ${postSearchType=='title'        ? 'selected':''}>제목</option>
+                    <option value="writer"       ${postSearchType=='writer'       ? 'selected':''}>글쓴이</option>
+                </select>
+
+                <!-- 검색어 입력 -->
+                <div class="search-container">
+                    <input class="search-input"
+                           type="text"
+                           id="searchPost"
+                           name="postQuery"
+                           placeholder="검색어를 입력하세요"
+                           value="${postQuery}" />
+                    <button class="search-button" type="submit">검색</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- 게시글 썸네일 리스트  -->
+        <div class="thumbnail_box">
+            <ul class="thumbnail_ul">
+                <c:forEach var="post" items="${posts}" varStatus="st" begin="0" end="7">
+                    <li class="thumbnail_li">
+                        <a href="/prodboard/detail?seq=${post.postId}">
+                            <img src="${post.postPic}" alt="썸네일 ${st.index+1}" />
+                            <div class="thumb_user">${post.postTitle}</div>
+                            <div class="post_info">
+                                <div class="post_day">${post.postId}</div>
+                                <div class="post_day">${post.postWriter}</div>
+                                <div class="post_view">
+                                    <div class="post_view_txt">조회<span class="post_view_num">${post.postView}</span></div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </c:forEach>
+            </ul>
+        </div>
+
+<%--        <!-- 페이지네이션 -->--%>
+        <nav class="pagination" aria-label="페이지네이션">
+            <ul>
+                <!-- 이전 -->
+                <li>
+                    <c:choose>
+                        <c:when test="${postStartPage > 1}">
+                            <a href="?postPage=${postStartPage-1}&userPage=${userCurrentPage}&aniPage=${aniCurrentPage}&adpPage=${adpCurrentPage}&prodPage=${prodCurrentPage}#tab3"
+                               class="prev">« 이전</a>
+                        </c:when>
+                        <c:otherwise>
+                            <span class="prev disabled">« 이전</span>
+                        </c:otherwise>
+                    </c:choose>
+                </li>
+
+                <!-- 페이지 번호 -->
+                <c:forEach begin="${postStartPage}" end="${postEndPage}" var="i">
+                    <li>
+                        <c:choose>
+                            <c:when test="${i == postCurrentPage}">
+                                <a href="?postPage=${i}&userPage=${userCurrentPage}&aniPage=${aniCurrentPage}&adpPage=${adpCurrentPage}&prodPage=${prodCurrentPage}#tab3"
+
+                                   class="active">${i}</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a href="?postPage=${i}&userPage=${userCurrentPage}&aniPage=${aniCurrentPage}&adpPage=${adpCurrentPage}&prodPage=${prodCurrentPage}#tab3"
+                                >${i}</a>
+                            </c:otherwise>
+                        </c:choose>
+                    </li>
+                </c:forEach>
+
+                <!-- 다음 -->
+                <li>
+                    <c:choose>
+                        <c:when test="${postEndPage < postTotalPages}">
+                            <a href="?postPage=${postEndPage+1}&userPage=${userCurrentPage}&aniPage=${aniCurrentPage}&adpPage=${adpCurrentPage}&prodPage=${prodCurrentPage}#tab3"
+                               class="next">다음 »</a>
+                        </c:when>
+                        <c:otherwise>
+                            <span class="next disabled">다음 »</span>
+                        </c:otherwise>
+                    </c:choose>
+                </li>
+            </ul>
+        </nav>
     </div>
 
-    <div class="thumbnail_box">
-        <ul class="thumbnail_ul" id="thumbnailList">
-             <!-- <li class="thumbnail_li">
-                <img src="" alt="">
-                <div class="thumb_user">라제니</div>
-                <div class="post_info">
-                    <div class="post_day">2025.05.18</div>
-                    <div class="post_view">
-                    <div class="post_view_txt">조회<span class="post_view_num">41</span></div>
-                </div>
-            </li> -->
-
-            <li class="thumbnail_li">
-                <img src="" alt="">
-                <div class="thumb_user">라제니</div>
-                <div class="post_info">s
-                    <div class="post_day">2025.05.18</div>
-                    <div class="post_view">
-                    <div class="post_view_txt">조회<span class="post_view_num">41</span></div>
-                </div>
-            </li>
-            <li class="thumbnail_li">
-                <img src="" alt="">
-                <div class="thumb_user">라제니</div>
-                <div class="post_info">
-                    <div class="post_day">2025.05.18</div>
-                    <div class="post_view">
-                    <div class="post_view_txt">조회<span class="post_view_num">41</span></div>
-                </div>
-            </li>  -->
-        </ul>
-    </div>
 
 
 
-
-
-     <nav class="pagination" aria-label="페이지네이션">
-      <ul>
-        <li><a href="?page=1" class="prev">« 이전</a></li>
-        <li><a href="?page=1" class="active">1</a></li>
-        <li><a href="?page=2">2</a></li>
-        <li><a href="?page=3">3</a></li>
-        <li><a href="?page=4">4</a></li>
-        <li><a href="?page=5">5</a></li>
-        <li><a href="?page=6">6</a></li>
-        <li><a href="?page=7">7</a></li>
-        <li><a href="?page=8">8</a></li>
-        <li><a href="?page=9">9</a></li>
-        <li><a href="?page=10">10</a></li>
-        <li><a href="?page=2" class="next">다음 »</a></li>
-      </ul>
-    </nav>
-  </div>
-
-
-
-  <!-- 입양 관리 탭 -->
+  <!-- 입양 관리 탭 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
   <div id="tab4" class="tab-content">
     <h2 class="content-header">입양 관리</h2>
 
@@ -476,6 +502,8 @@
                 <input type="hidden" name="aniPage" value="${aniCurrentPage}" />
                 <!-- adpPage도 그대로 유지 -->
                 <input type="hidden" name="adpPage" value="1" />
+                <input type="hidden" name="prodPage" value="${prodCurrentPage}" />
+                <input type="hidden" name="postPage" value="${postCurrentPage}" />
 
                 <!-- 검색 기준 -->
                 <select name="searchType" id="adoptionManage">
@@ -496,12 +524,6 @@
             </form>
         </div>
 
-
-<%--     <div class="thumbnail_box">--%>
-<%--        <ul class="thumbnail_ul" id="thumbnailList2">--%>
-
-<%--        </ul>--%>
-<%--    </div>--%>
       <div class="thumbnail_box">
           <ul class="thumbnail_ul">
               <c:forEach var="animal" items="${adoptions}" varStatus="st" begin="0" end="7">
@@ -569,71 +591,137 @@
   </div>
 
 
+    <!-- 상품 관리 탭 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+    <div id="tab5" class="tab-content">
+        <h2 class="content-header">상품 관리</h2>
 
+        <!-- 검색 바 -->
+        <div class="search_bar">
+            <form action="/adminpage#tab5" method="get" class="admin_search_form">
+                <!-- 탭 및 페이징 파라미터 유지 -->
+                <input type="hidden" name="userPage" value="${userCurrentPage}" />
+                <input type="hidden" name="aniPage" value="${aniCurrentPage}" />
+                <input type="hidden" name="adpPage" value="${adpCurrentPage}" />
+                <input type="hidden" name="prodPage" value="1" />
+                <input type="hidden" name="postPage" value="${postCurrentPage}" />
 
+                <!-- 검색 기준 (id="ProductManage" 유지) -->
+                <select name="searchType" id="ProductManage">
+                    <option value="product" ${param.searchType=='product' ? 'selected':''}>상품명</option>
+                    <option value="cate"    ${param.searchType=='cate'    ? 'selected':''}>종류</option>
+                    <option value="number"  ${param.searchType=='number'  ? 'selected':''}>상품번호</option>
+                </select>
 
-  <!-- 상품 관리 탭 -->
-  <div id="tab5" class="tab-content">
-    <h2 class="content-header">상품 관리</h2>
+                <!-- 검색어 입력 -->
+                <div class="search-container">
+                    <input class="search-input"
+                           type="text"
+                           id="searchproduct"
+                           name="query"
+                           placeholder="검색어를 입력하세요"
+                           value="${param.query}" />
+                    <button class="search-button" type="submit">검색</button>
+                </div>
+            </form>
+        </div>
 
-    <div class="search_bar">
-      <select name="board_manage" id="ProductManage">
-        <option value="product">상품명</option>
-        <option value="cate">종류</option>
-        <option value="number">상품번호</option>
-      </select>
+        <!-- 상품 리스트 -->
+        <table>
+            <thead>
+            <tr>
+                <th class="p_no">상품번호</th>
+                <th class="p_name">상품이름</th>
+                <th class="p_price">가격</th>
+                <th class="p_regDate">판매일자</th>
+                <th class="p_type">분류</th>
+                <th class="p_out">삭제</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="prod" items="${products}" varStatus="st">
+                <tr class="boardBody">
+                    <td class="p_no">${prod.productID}</td>
+                    <td class="p_name"><a href="/admin/product/detail?seq=${prod.productID}">${prod.productName}</a></td>
+                    <td class="p_price">${prod.productPrice}원</td>
+                    <td class="p_regDate">${prod.productCreatedAt}</td>
+                    <td class="p_type">${prod.productType}</td>
+                    <td class="p_out p_out_c">
+                        <a href="/admin/product/delete?seq=${prod.productID}"
+                           onclick="return confirm('정말 삭제하시겠습니까?');">
+                            삭제
+                        </a>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
 
-      <div class="search-container">
-        <input type="text" class="search-input" placeholder="검색어를 입력하세요">
-        <button class="search-button">검색</button>
-      </div>
+        <!-- 페이지네이션 -->
+        <nav class="pagination" aria-label="페이지네이션">
+            <ul>
+                <!-- 이전 블록 -->
+                <li>
+                    <c:choose>
+                        <c:when test="${prodStartPage > 1}">
+                            <a href="?prodPage=${prodStartPage-1}
+                         &userPage=${userCurrentPage}
+                         &aniPage=${aniCurrentPage}
+                         &adpPage=${adpCurrentPage}
+                         &searchType=${param.searchType}
+                         &query=${param.query}#tab5"
+                               class="prev">« 이전</a>
+                        </c:when>
+                        <c:otherwise>
+                            <span class="prev disabled">« 이전</span>
+                        </c:otherwise>
+                    </c:choose>
+                </li>
+
+                <!-- 개별 페이지 번호 -->
+                <c:forEach begin="${prodStartPage}" end="${prodEndPage}" var="i">
+                    <li>
+                        <c:choose>
+                            <c:when test="${i == prodCurrentPage}">
+                                <a href="?prodPage=${i}
+                           &userPage=${userCurrentPage}
+                           &aniPage=${aniCurrentPage}
+                           &adpPage=${adpCurrentPage}
+                           &searchType=${param.searchType}
+                           &query=${param.query}#tab5"
+                                   class="active">${i}</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a href="?prodPage=${i}
+                           &userPage=${userCurrentPage}
+                           &aniPage=${aniCurrentPage}
+                           &adpPage=${adpCurrentPage}
+                           &searchType=${param.searchType}
+                           &query=${param.query}#tab5">${i}</a>
+                            </c:otherwise>
+                        </c:choose>
+                    </li>
+                </c:forEach>
+
+                <!-- 다음 블록 -->
+                <li>
+                    <c:choose>
+                        <c:when test="${prodEndPage < prodTotalPages}">
+                            <a href="?prodPage=${prodEndPage+1}
+                         &userPage=${userCurrentPage}
+                         &aniPage=${aniCurrentPage}
+                         &adpPage=${adpCurrentPage}
+                         &searchType=${param.searchType}
+                         &query=${param.query}#tab5"
+                               class="next">다음 »</a>
+                        </c:when>
+                        <c:otherwise>
+                            <span class="next disabled">다음 »</span>
+                        </c:otherwise>
+                    </c:choose>
+                </li>
+            </ul>
+        </nav>
     </div>
-
-
-    <table>
-      <thead>
-        <tr>
-          <th class="p_no">상품번호</th>
-          <th class="p_name">상품이름</th>
-          <th class="p_price">가격</th>
-          <th class="p_regDate">판매일자</th>
-          <th class="p_yesno">No</th>
-          <th class="p_out">삭제</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="boardBody">
-          <td class="p_no">1</td>
-          <td class="p_name"><a href="">산양유 트릿</a></td>
-          <td class="p_price">1,8000원</td>
-          <td class="p_regDate">2025-04-30</td>
-          <td class="p_yesno">yes</td>
-          <td class="p_out p_out_c">삭제</td>
-        </tr>
-      </tbody>
-    </table>
-
-
-
-
-     <nav class="pagination" aria-label="페이지네이션">
-      <ul>
-        <li><a href="?page=1" class="prev">« 이전</a></li>
-        <li><a href="?page=1" class="active">1</a></li>
-        <li><a href="?page=2">2</a></li>
-        <li><a href="?page=3">3</a></li>
-        <li><a href="?page=4">4</a></li>
-        <li><a href="?page=5">5</a></li>
-        <li><a href="?page=6">6</a></li>
-        <li><a href="?page=7">7</a></li>
-        <li><a href="?page=8">8</a></li>
-        <li><a href="?page=9">9</a></li>
-        <li><a href="?page=10">10</a></li>
-        <li><a href="?page=2" class="next">다음 »</a></li>
-      </ul>
-    </nav>
-  </div>
-
 
         
     
@@ -695,7 +783,7 @@
         });
     </script>
 
-<script src="/resources/js/mypage.js"></script>
+<%--<script src="/resources/js/mypage.js"></script>--%>
 <script src="/resources/js/mainpage.js"></script>
 <%--<script src="/resources/js/Admin_Page.js"></script>--%>
 </body>

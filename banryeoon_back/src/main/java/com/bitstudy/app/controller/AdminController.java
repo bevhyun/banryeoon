@@ -1,21 +1,20 @@
 package com.bitstudy.app.controller;
 
-import com.bitstudy.app.dao.AnimalDao;
-import com.bitstudy.app.dao.AnimalDaoImpl;
-import com.bitstudy.app.dao.UserDao;
+import com.bitstudy.app.dao.*;
 import com.bitstudy.app.dto.AnimalDto;
+import com.bitstudy.app.dto.PetsProductDto;
+import com.bitstudy.app.dto.ProudBoardDto;
 import com.bitstudy.app.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 //---------------------------------------------------------------------------
 
@@ -25,7 +24,7 @@ import java.util.Map;
 //@Controller
 //public class AdminController {
 //
-//    @Autowired
+//    @Autowiredz
 //    private UserDao   userDao;
 //    @Autowired
 //    private AnimalDao animalDao;
@@ -257,6 +256,8 @@ import java.util.Map;
 
 //==========================================================================
 
+    // 최종코드
+
 @Controller
 public class AdminController {
 
@@ -264,6 +265,10 @@ public class AdminController {
     private UserDao   userDao;
     @Autowired
     private AnimalDao animalDao;
+    @Autowired
+    private PetsProductDao petsProductDao;
+    @Autowired
+    private ProudBoardDao proudBoardDao;
 
     @GetMapping("/adminpage")
     public String adminpage(
@@ -271,9 +276,15 @@ public class AdminController {
             @RequestParam(name = "userPage", defaultValue = "1") int userPage,
             @RequestParam(name = "aniPage",  defaultValue = "1") int aniPage,
             @RequestParam(name = "adpPage",  defaultValue = "1") int adpPage,
-            // 회원 관리, 동물조회, 우아자(우리아이자랑), 입양게시판, 상품게시판 탭에서의 검색 타입과 검색어
+            @RequestParam(name = "prodPage", defaultValue = "1") int prodPage,
+            @RequestParam(name = "postPage",  defaultValue = "1") int postPage,
+            // 회원 관리, 동물조회, 입양게시판, 상품게시판 탭에서의 검색 타입과 검색어
             @RequestParam(name="searchType", defaultValue="breed") String searchType,
             @RequestParam(name="query",      required=false) String query,
+
+            // 자랑게시판 전용 검색 파라미터 (새로 추가)
+            @RequestParam(name="postSearchType", defaultValue="writer+title") String postSearchType,
+            @RequestParam(name="postQuery", required=false) String postQuery,
             Model model) {
 
         // --- 유저 관리 Tab (pageSize=8, blockSize=5) ---------------------------------------------------------------------------------
@@ -339,7 +350,7 @@ public class AdminController {
 
         // --- 동물 조회 Tab (pageSize=8, blockSize=10) ---------------------------------------------------------------------------
         // 페이징 기본값
-        final int aPageSize  = 8;
+        final int aPageSize  = 6;
         final int aBlockSize = 10;
 
         // 검색어 있으면 검색 매퍼 그대로 실행
@@ -394,6 +405,66 @@ public class AdminController {
         model.addAttribute("aniEndPage",     aEndPage);
         model.addAttribute("searchType",     searchType);
         model.addAttribute("query",          query);
+
+
+// --- 자랑 게시판 관리(Tab3) (pageSize=8, blockSize=10)------------------------------------------------------------------------
+
+        final int postSize = 8;
+        final int postBlock = 10;
+
+        int postTotalCnt;
+        List<ProudBoardDto> posts;
+
+        if (postQuery != null && !postQuery.isEmpty()) {
+            // 검색 시: 검색 결과 전체를 메모리로 가져와서 페이징 (기존 방식)
+            List<ProudBoardDto> fullPostList;
+            switch (postSearchType) {
+                case "title":
+                    fullPostList = proudBoardDao.searchPostByTitle(postQuery);
+                    break;
+                case "writer":
+                    fullPostList = proudBoardDao.searchPostByWriter(postQuery);
+                    break;
+                case "writer+title":
+                    fullPostList = proudBoardDao.searchPostByWriterAndTitle(postQuery);
+                    break;
+                default:
+                    fullPostList = Collections.emptyList();
+            }
+
+            postTotalCnt = fullPostList.size();
+
+            // 메모리에서 페이징
+            int postOffset = (postPage - 1) * postSize;
+            int postToIndex = Math.min(postOffset + postSize, postTotalCnt);
+            posts = (postOffset < postToIndex)
+                    ? fullPostList.subList(postOffset, postToIndex)
+                    : Collections.emptyList();
+
+        } else {
+            // 검색 없을 때: DB 레벨 페이징 (AdminselectPostCount 사용!)
+            postTotalCnt = proudBoardDao.AdminselectPostCount(); // 여기서 사용!
+
+            // 현재 페이지에 해당하는 데이터만 DB에서 가져오기
+            int postOffset = (postPage - 1) * postSize;
+            posts = proudBoardDao.AdminselectPostList(
+                    Map.of("offset", postOffset, "limit", postSize)
+            );
+        }
+
+// 페이징 계산
+        int postTotalPg = (postTotalCnt == 0) ? 1 : (int)Math.ceil((double)postTotalCnt / postSize);
+        postPage = Math.max(1, Math.min(postPage, postTotalPg));
+        int postStart = ((postPage - 1) / postBlock) * postBlock + 1;
+        int postEnd = Math.min(postStart + postBlock - 1, postTotalPg);
+
+        model.addAttribute("posts", posts);
+        model.addAttribute("postCurrentPage", postPage);
+        model.addAttribute("postTotalPages", postTotalPg);
+        model.addAttribute("postStartPage", postStart);
+        model.addAttribute("postEndPage", postEnd);
+        model.addAttribute("postSearchType", postSearchType);
+        model.addAttribute("postQuery", postQuery);
 
 
 // 입양게시판 관리 TAB (pageSize=8, blockSize=10)--------------------------------------------------------------------------------
@@ -451,7 +522,84 @@ public class AdminController {
         model.addAttribute("adpStartPage",   adpStart);
         model.addAttribute("adpEndPage",     adpEnd);
 
+// --- 상품 관리 Tab (pageSize=8, blockSize=10) ---------------------------------------------------------
+        final int pPageSize  = 6;   // 한 페이지에 보여줄 상품 수
+        final int pBlockSize = 10;  // 페이지네이션에 표시할 페이지 번호 개수
+
+        // 전체 상품 리스트 fullProdList 준비: 검색어(query) 있으면 검색 DAO, 없으면 전체 DAO
+        List<PetsProductDto> fullProdList;
+        if (query != null && !query.isEmpty()) {
+            switch (searchType) {
+                case "product":
+                    // 상품명으로 검색
+                    fullProdList = petsProductDao.getPetsProductByName(query);
+                    break;
+                case "Type":
+                    // 상품 종류로 검색 (여기서는 productType이 int이므로 파싱)
+                    try {
+                        int type = Integer.parseInt(query);
+                        fullProdList = petsProductDao.getPetsProductByType(type);
+                    } catch (NumberFormatException e) {
+                        fullProdList = Collections.emptyList();
+                    }
+                    break;
+                case "number":
+                    // 상품번호로 검색
+                    try {
+                        int id = Integer.parseInt(query);
+                        fullProdList = petsProductDao.getPetsProductById(id);
+                    } catch (NumberFormatException e) {
+                        fullProdList = Collections.emptyList();
+                    }
+                    break;
+                default:
+                    // 그 외 잘못된 검색 타입
+                    fullProdList = Collections.emptyList();
+            }
+        } else {
+            // 검색어 없으면 전체 조회
+            fullProdList = petsProductDao.getAllPetsProducts();
+        }
+
+// 2) 전체 건수·전체 페이지 수 계산
+        int pTotalCount = fullProdList.size();
+        int pTotalPages = (int)Math.ceil((double)pTotalCount / pPageSize);
+
+// 3) prodPage 보정 및 offset/start/end 계산
+        prodPage = Math.max(1, Math.min(prodPage, pTotalPages));
+        int pOffset     = (prodPage - 1) * pPageSize;
+        int pStartPage  = ((prodPage - 1) / pBlockSize) * pBlockSize + 1;
+        int pEndPage    = Math.min(pStartPage + pBlockSize - 1, pTotalPages);
+
+// 4) subList로 현재 페이지만 뽑아내기
+        int pToIndex = Math.min(pOffset + pPageSize, pTotalCount);
+        List<PetsProductDto> pageProducts = (pOffset < pToIndex)
+                ? fullProdList.subList(pOffset, pToIndex)
+                : Collections.emptyList();
+
+// 5) 모델에 담기
+        model.addAttribute("products",        pageProducts);
+        model.addAttribute("prodCurrentPage", prodPage);
+        model.addAttribute("prodTotalPages",  pTotalPages);
+        model.addAttribute("prodStartPage",   pStartPage);
+        model.addAttribute("prodEndPage",     pEndPage);
+        model.addAttribute("searchType",      searchType);
+        model.addAttribute("query",           query);
+
         return "Admin_Page";
+    }
+
+    // 자랑게시판 조회수 증가와 select를 하나의 트랜잭션으로 묶어줍니다.
+    @Transactional
+    @GetMapping("/prodboard/detail/{postId}")
+    public String detail(@PathVariable int postId, Model model) {
+//    public String detail}(@RequestParam("seq") int postId, Model model) {
+        // 조회수 1 증가
+        proudBoardDao.incrementViews(postId);
+        // 증가된 조회수 포함한 게시글 상세 조회
+        ProudBoardDto post = proudBoardDao.selectById(postId);
+        model.addAttribute("post", post);
+        return "admin/board/detail";
     }
 
 
@@ -485,7 +633,20 @@ public class AdminController {
         return "redirect:/adminpage?aniPage=" + aniPage + "#tab2";
     }
 
-
+    // 상품관리에서 상품을 삭제하는 코드
+    @GetMapping("/admin/product/delete")
+    // jsp에서 삭제 버튼을 누르면 파라미터가 /admin/product/delete 로 넘어가게 링크 걸어둠
+    public String deleteproduct(
+            @RequestParam("seq") int seq,
+            @RequestParam(name = "proPage", defaultValue = "1") int proPage
+    ) {
+        // 회원 삭제 호출
+        petsProductDao.PetsProductDelete(seq);
+        // 삭제 후 리다이렉트 (회원관리 탭 유지)
+        return "redirect:/adminpage?proPage=" + proPage + "#tab5";
+    }
 }
+
+
 
 

@@ -6,10 +6,10 @@ import java.sql.SQLException;
 
 public class DBUtil {
     private static final String URL = "jdbc:mysql://localhost:3306/banryeoon_db?useSSL=false&serverTimezone=UTC";
-    private static final String USER = "root"; // MySQL 사용자 이름
-    private static final String PASSWORD = "1234"; // 설정한 비밀번호
-//    private static final String USER = "bitstudy"; // MySQL 사용자 이름
-//    private static final String PASSWORD = "asdf1234!"; // 설정한 비밀번호
+//    private static final String USER = "root"; // MySQL 사용자 이름
+//    private static final String PASSWORD = "1234"; // 설정한 비밀번호
+    private static final String USER = "bitstudy"; // MySQL 사용자 이름
+    private static final String PASSWORD = "asdf1234!"; // 설정한 비밀번호
 
 
     static {

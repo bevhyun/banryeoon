@@ -441,7 +441,7 @@ table tbody,
 table th,
 table td { display: block }
 
-table tr { display: flex; justify-content: space-between; height: 50px; }
+table tr { display: flex; justify-content: space-between; height: 65px; }
 table th, table td { text-align: center; padding: 0 10px; font-size: 15px;}
 
 table tr.boardBody { background: #e8e8e8; }

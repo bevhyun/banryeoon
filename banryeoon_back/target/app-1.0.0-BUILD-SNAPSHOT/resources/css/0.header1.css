@@ -123,13 +123,14 @@
     justify-content: space-around;
    
     align-items: center;
-
-
     color: #fffbf2;
     font-weight: 500;
     font-size: 15px;
   }
 
+  .nav_li{
+      cursor: pointer;
+  }
   /* <nave_page> - 펼쳐지는거,, 음 여기 스크립트로 짤꺼임 */
 
   .nav_page{

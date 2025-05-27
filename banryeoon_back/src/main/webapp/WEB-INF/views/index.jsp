@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -24,7 +25,7 @@
                     </div>
                     </a>
                     <div class="join_bar">
-                        <a href=<c:url value="/login" />
+                        <a href=<c:url value="/login" />>
                                    <div class="login ">로그인</div>
                         </a>
                         <a href="/join"><div class="join">회원가입</div></a>
@@ -60,22 +61,22 @@
             <ul class="nav_page_ul">
                 <li class="nav_page_intro">
     
-                        <div class="np"><a href="">기업소개</a></div>
+                        <div class="np"><a href="/company/intro">기업소개</a></div>
                         <div class="np"><a href="">반려온 이벤트</a></div>
                     
                 </li>
 
                 <li class="nav_page_process">
     
-                        <div class="np"><a href="">분양소개</a></div>
+                        <div class="np"><a href="/adoption/intro">분양소개</a></div>
                    
                 </li>
 
                 <li class="nav_page_adopt">
     
-                        <div class="np"><a href="">고양이 입양</a></div>
-                        <div class="np"><a href="">강아지 입양</a></div>
-                    
+                        <div class="np"><a href="http://localhost:8080/adoption/list?aniTypeCd=200">고양이 입양</a></div>
+                        <div class="np"><a href="http://localhost:8080/adoption/list">강아지 입양</a></div>
+
                 </li>
 
                 
@@ -106,194 +107,71 @@
 
         <div class="main_adopt"> 
             <div class="area_box">
-                <div class="adopt_dog_box">
-                    <div class="adopt_dog_title">입양 가능 반려견</div>
-                    <a href="">
-                        <ul class="adopt_dog_ul">
-                        <li class="adopt_dog_li">
-                            <img src="" alt="" class="adopt_dog_img">
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_dog_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                            
-                        </li>
-                        <li class="adopt_dog_li">
-                            <img src="" alt="" class="adopt_dog_img">
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_dog_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                            
-                        </li>
-                        <li class="adopt_dog_li">
-                            <img src="" alt="" class="adopt_dog_img">
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_dog_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                            
-                        </li>
-                        <li class="adopt_dog_li">
-                            <img src="" alt="" class="adopt_dog_img">
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_dog_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                            
-                        </li>
-                        <li class="adopt_dog_li">
-                            <img src="" alt="" class="adopt_dog_img">
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_dog_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                            
-                        </li>
-                        <li class="adopt_dog_li">
-                            <img src="" alt="" class="adopt_dog_img">
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_dog_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                            
-                        </li>
+                <div class="adopt_box">
+                    <div class="adopt_title">입양 가능 반려견</div>
+
+                    <ul class="adopt_ul">
+
+                        <c:forEach var="animal" items="${dogs}" varStatus="status">
+                            <c:if test="${status.index < 6}">
+                                <li class="adopt_li">
+                                    <a href="/adoption/list/detail?aniSeqno=${animal.aniSeqno}">
+                                        <div class="adopt_img_box">
+                                            <img src="${animal.aniImg1}" alt="${animal.aniSeqno}${animal.aniBreed}" class="adopt_img">
+                                        </div>
+
+                                        <div class="ptitle_box">
+                                            <div class="ptitle_sbox">
+                                                <div class="location">${animal.aniHappenPlace}</div>
+                                                <div class="adopt_ptitle">${animal.aniBreed}</div>
+                                            </div>
+                                            <div class="view_box">
+                                                <div class="view_title">view</div>
+                                                    <%--                                            <div class="view_no">${animal.viewCount}</div>--%>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </c:if>
+                        </c:forEach>
                     </ul>
-                    </a>
+
                 </div>
              
-                    <div class="btn_showMore"><a href="#">더 많은 반려견 보러가기</a></div>
+                    <div class="btn_showMore"><a href="/adoption/list?aniTypeCd=100">더 많은 반려견 보러가기</a></div>
                  
 
-                  <div class="adopt_cat_box">
-                    <div class="adopt_cat_title">입양 가능 반려묘</div>
-                    
-                   <a href="">
-                     <ul class="adopt_cat_ul">
-                        <li class="adopt_cat_li">
-                            <img src="" alt="" class="adopt_cat_img">
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                            
-                        </li>
-                        <li class="adopt_cat_li">
-                            <img src="" alt="" class="adopt_cat_img">
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                            
-                        </li>
-                        <li class="adopt_cat_li">
-                            <img src="" alt="" class="adopt_cat_img">
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                            
-                        </li>
-                        <li class="adopt_cat_li">
-                            <img src="" alt="" class="adopt_cat_img">
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                            
-                        </li>
-                        <li class="adopt_cat_li">
-                            <img src="" alt="" class="adopt_cat_img">
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                            
-                        </li>
-                        <li class="adopt_cat_li">
-                            <img src="" alt="" class="adopt_cat_img">
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                            
-                        </li>
-                    </ul>
-                   </a>
+                  <div class="adopt_box">
+                    <div class="adopt_title">입양 가능 반려묘</div>
+                      <ul class="adopt_ul">
+
+                          <c:forEach var="animal" items="${cats}" varStatus="status">
+                              <c:if test="${status.index < 6}">
+                                  <li class="adopt_li">
+                                      <a href="/adoption/list/detail?aniSeqno=${animal.aniSeqno}">
+                                          <div class="adopt_img_box">
+                                              <img src="${animal.aniImg1}" alt="${animal.aniSeqno}${animal.aniBreed}" class="adopt_img">
+                                          </div>
+
+                                          <div class="ptitle_box">
+                                              <div class="ptitle_sbox">
+                                                  <div class="location">${animal.aniHappenPlace}</div>
+                                                  <div class="adopt_ptitle">${animal.aniBreed}</div>
+                                              </div>
+                                              <div class="view_box">
+                                                  <div class="view_title">view</div>
+                                                      <%--                                            <div class="view_no">${animal.viewCount}</div>--%>
+                                              </div>
+                                          </div>
+                                      </a>
+                                  </li>
+                              </c:if>
+                          </c:forEach>
+                      </ul>
+
+
                 </div>
-                 <a href="">
+                 <a href="/adoption/list?aniTypeCd=200">
                     <div class="btn_showMore">더 많은 반려묘 보러가기</div>
                  </a>
                      
@@ -311,155 +189,45 @@
                     <div class="adopted_baby_title">입양사진 및 후기</div>
                 <div class="adopted_baby_desc">입양 간 아이들의 행복이 가득한 즐거운 일상! <br>반려온은 입양 후 섬세하고 지속적인 관리로 아이들이 극진한 사랑을 받으면서 지낼 수 있도록 노력합니다.</div>
                 </div>
-                <a href="">
-                    <ul class="adopted_baby_ul">
-                        <li class="adopted_baby_li">
-                            <img src="" alt=""> 가나디 이미지
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                        </li>
 
-                          <li class="adopted_baby_li">
-                            <img src="" alt=""> 가나디 이미지
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                        </li>
+                <ul class="adopted_baby_ul">
+                    <c:forEach var="proud" items="${prodboard}" varStatus="status">
+                        <c:if test="${status.index < 10}">
 
-                          <li class="adopted_baby_li">
-                            <img src="" alt=""> 가나디 이미지
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                        </li>
+                            <li class="adopted_baby_li">
+                                <a href="">
+                                    <div class="adopt_img_box proud_img_box">
+                                        <img src="${proud.postPic}" alt="" class="adopt_img">
+                                    </div>
 
-                          <li class="adopted_baby_li">
-                            <img src="" alt=""> 가나디 이미지
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                        </li>
+                                    <div class="proud_desc_box">
+                                        <div class="ptitle_box">
+                                            <div class="ptitle_sbox">
+                                                <div class="adopt_ptitle proud_title">${proud.postTitle}</div>
+                                            </div>
+                                            <div class="proud_desc">
+                                                <div class="writer">${proud.postWriter}</div>
+                                                <div class="view_box">
+                                                    <div class="view_title">조회</div>
+                                                    <div class="view_no">${proud.postView}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                          <li class="adopted_baby_li">
-                            <img src="" alt=""> 가나디 이미지
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                        </li>
+                                </a>
+                            </li>
+                        </c:if>
+                    </c:forEach>
+                </ul>
 
-                          <li class="adopted_baby_li">
-                            <img src="" alt=""> 가나디 이미지
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                        </li>
-
-                          <li class="adopted_baby_li">
-                            <img src="" alt=""> 가나디 이미지
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                        </li>
-
-                          <li class="adopted_baby_li">
-                            <img src="" alt=""> 가나디 이미지
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                        </li>
-
-                          <li class="adopted_baby_li">
-                            <img src="" alt=""> 가나디 이미지
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                        </li>
-
-                          <li class="adopted_baby_li">
-                            <img src="" alt=""> 가나디 이미지
-                            <div class="ptitle_box">
-                                 <div class="ptitle_sbox">
-                                    <div class="location">지역 위치</div>
-                                    <div class="adopt_cat_ptitle">종류</div>
-                                 </div>
-                                <div class="view_box">
-                                    <div class="view_title">view</div>
-                                    <div class="view_no">0</div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </a>
             </div>
-            <a href="">
-                 <a href="">
-                    <div class="btn_showMore"><a href="">입양후기 더 보러가기</a></div>
-                 </a>
-            </a>
+
+             <a href="/proud/list">
+                <div class="btn_showMore">
+                    입양후기 더 보러가기</div>
+             </a>
+
      </div>
 
      <div class="supporters">
@@ -469,34 +237,54 @@
             </div>
             <ul class="support_org_ul">
                 <li class="support_org_li">
-                    <a href=""></a>
+                    <a href="">
+                        <img src="/resources/img/anicom1.jpg" alt="anicom1">
+                    </a>
                 </li>
                 <li class="support_org_li">
-                    <a href=""></a>
+                    <a href="">
+                        <img src="/resources/img/anicom2.jpeg" alt="anicom2">
+                    </a>
                 </li>
                 <li class="support_org_li">
-                    <a href=""></a>
+                    <a href="">
+                        <img src="/resources/img/anicom3.webp" alt="anicom3">
+                    </a>
                 </li>
                 <li class="support_org_li">
-                    <a href=""></a>
+                    <a href="">
+                        <img src="/resources/img/anicom4.png" alt="anicom4" style="width: 180px;">
+                    </a>
                 </li>
                 <li class="support_org_li">
-                    <a href=""></a>
+                    <a href="">
+                        <img src="/resources/img/anicom5.jpg" alt="anicom5" style="width: 160px;">
+                    </a>
                 </li>
                 <li class="support_org_li">
-                    <a href=""></a>
+                    <a href="">
+                        <img src="/resources/img/anicom6.png" alt="anicom6">
+                    </a>
                 </li>
                 <li class="support_org_li">
-                    <a href=""></a>
+                    <a href="">
+                        <img src="/resources/img/anicom7.png" alt="anicom7">
+                    </a>
                 </li>
                 <li class="support_org_li">
-                    <a href=""></a>
+                    <a href="">
+                        <img src="/resources/img/anicom8.png" alt="anicom8" style="width: 160px;">
+                    </a>
                 </li>
                 <li class="support_org_li">
-                    <a href=""></a>
+                    <a href="">
+                        <img src="/resources/img/anicom9.jpg" alt="anicom9">
+                    </a>
                 </li>
                 <li class="support_org_li">
-                    <a href=""></a>
+                    <a href="">
+                        <img src="/resources/img/anicom10.jpg" alt="anicom10">
+                    </a>
                 </li>
             </ul>
         </div>
@@ -532,4 +320,5 @@
 
 
 </body>
+</html>
 
