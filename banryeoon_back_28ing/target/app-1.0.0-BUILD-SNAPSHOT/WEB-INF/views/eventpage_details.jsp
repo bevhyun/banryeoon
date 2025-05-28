@@ -1,0 +1,133 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header2.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/eventpage_details.css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <div class="header_top">
+            <div class="content_box">
+                <div class="area_box">
+                    <div class="h_t_box">
+                        <a href="">
+                            <div class="h_logo_word_box">
+                            <img src="../img/logo.word.png" alt="반려온(사이트이름)" class="h_logo_word">
+                    </div>
+                    </a>
+                    <div class="join_bar">
+                        <a href=""><div class="login ">로그인</div></a>
+                        <a href=""><div class="join">회원가입</div></a>
+                    </div>
+                        
+                </div>
+                <div class="h_t_desc">유기하지말고 반려온!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="h_img_box">
+            <img src="" alt="" class="h_logo_img"> 로고 들어갈것
+        </div>
+    </header>
+
+
+    <nav>
+        <div class="nav_bar">
+            <div class="area_box">
+                <div class="area_box nav_box">
+                    <ul class="nav_ul">
+                        <li class="nav_li">기업소개</li>
+                        <li class="nav_li">분양절차</li>
+                        <li class="nav_li">고양이/강아지 입양</li>
+                        <li class="nav_li">우리아기 자랑</li>
+                        <li class="nav_li">제품구매</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav_page">
+            <ul class="nav_page_ul">
+                <li class="nav_page_intro">
+    
+                        <div class="np"><a href="">기업소개</a></div>
+                        <div class="np"><a href="">반려온 이벤트</a></div>
+                    
+                </li>
+
+                <li class="nav_page_process">
+    
+                        <div class="np"><a href="">분양소개</a></div>
+                
+                </li>
+
+                <li class="nav_page_adopt">
+    
+                        <div class="np"><a href="">고양이 입양</a></div>
+                        <div class="np"><a href="">강아지 입양</a></div>
+                    
+                </li>
+
+                
+                <li class="nav_page_review">
+    
+                        <div class="np"><a href="">입양 후기</a></div>
+                
+                </li>
+
+            <li class="nav_page_merchan">
+                    <div class="np"><a href="">고양이 제품</a></div>
+                    <div class="np"><a href="">강아지 제품</a></div>
+                </li>
+            </ul>
+        </div>
+
+    </nav> 
+<!-- 네비 끝-->
+
+
+    <!-- event-detail.html -->
+<div class="event-detail-container">
+    <section class="event-detail-hero">
+        <img src="./img/event1.jpg" alt="이벤트 대표 이미지" class="event-detail-image">
+        <div class="event-detail-title-box">
+        <h1 class="event-detail-title">제4회 강아지볶음밥 만들기 대회!</h1>
+        <div class="event-detail-date">2025-05-18</div>
+        </div>
+    </section>
+    <section class="event-detail-info">
+        <h2>이벤트 소개</h2>
+        <p>
+        강아지와 함께하는 특별한 볶음밥 만들기 대회!<br>
+        다양한 레시피와 푸짐한 경품이 준비되어 있습니다.<br>
+        반려견과 즐거운 추억을 만들어보세요.
+        </p>
+    </section>
+    <section class="event-detail-extra">
+        <h2>참가 안내</h2>
+        <ul>
+        <li>참가비: 무료</li>
+        <li>장소: 서울특별시 반려온센터</li>
+        <li>시간: 2025년 5월 18일 14:00 ~ 17:00</li>
+        </ul>
+    </section>
+    <button class="back-to-list-btn" onclick="goToEventList()">목록으로 돌아가기</button>
+</div>
+
+<script src="../js/eventpage_details.js"></script>
+
+
+</body>
+</html>
