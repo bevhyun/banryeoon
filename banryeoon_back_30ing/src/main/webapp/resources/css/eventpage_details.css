@@ -1,0 +1,96 @@
+    /* event-detail.css */
+
+.event-detail-container {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+    /* Hero 영역: 대표 이미지 + 타이틀 */
+.event-detail-hero {
+    background-color: #ffe082; /* 연노랑 */
+    display: flex;
+    align-items: center;
+    padding: 32px 24px;
+    gap: 32px;
+}
+
+.event-detail-image {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #bbb;
+    background: #fff;
+}
+
+.event-detail-title-box {
+    flex: 1;
+}
+
+.event-detail-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.event-detail-date {
+    font-size: 16px;
+    color: #666;
+}
+
+.event_detail_descimg > img{
+    width: 100%;
+}
+
+    /* 이벤트 소개 */
+.event-detail-info {
+    background-color: #fce4ec; /* 연핑크 */
+    padding: 32px 24px;
+}
+
+.event-detail-info h2 {
+    margin-top: 0;
+    color: #c2185b;
+}
+
+    /* 추가 안내 */
+.event-detail-extra {
+    background-color: #e3f2fd; /* 연하늘 */
+    padding: 32px 24px;
+}
+
+.event-detail-extra h2 {
+    margin-top: 0;
+    color: #1976d2;
+}
+
+.event-detail-extra ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #333;
+}
+
+.back-to-list-btn {
+    position: absolute;
+    /*bottom: 20px;*/
+    right: 15px;
+    margin: 0; /* 기존 margin 제거 */
+    z-index: 10;
+    padding: 10px 28px;
+    background-color: #4e5e43;   /* 목록 파트와 구분되는 진한 그린 */
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(78,94,67,0.15);
+}
+.back-to-list-btn:hover {
+    background-color: #2d3a28;
+}

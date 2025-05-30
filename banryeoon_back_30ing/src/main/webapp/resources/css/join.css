@@ -1,0 +1,469 @@
+  
+  body{background-color: #fffbf2;  position: relative;}
+  
+  /* ----------------------------------------- */
+    /* --------------- < Header > -------------- */
+    /* ----------------------------------------- */
+  
+
+
+/* <header_top>*/
+  /* 헤더에 들어가는 이미지나 태그는 클라스 이름 앞에 h_ 붙여서 다른 파트 이름이랑 구분하기 */
+
+
+  .header_top{
+      width: 100%;
+      border-bottom: 1px solid #c8deb8;
+      background-color: white;
+  }
+  .h_t_box{
+      width: 100%;
+      height: 50px;
+      margin: 0 auto;
+
+      position: relative;
+  }
+
+  .h_t_desc {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 97%;
+      transform: translateX(-50%);
+      line-height: 50px;
+      font-size: 15px;
+      font-weight: 500;
+      color: gray;
+
+  }
+
+
+  .h_logo_word_box{
+      width: 150px;
+      height: 30px;
+
+      margin-top: 10px;
+      padding: 10px;
+      box-sizing: border-box;
+      position: relative;
+
+
+  }
+  .h_logo_word{
+      width: 120px;
+      height: 30px;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+
+  }
+  .h_t_box{
+      display: flex;
+
+  }
+  .login_name{
+      padding: 20px 0;
+      box-sizing: border-box;
+      text-align: center;
+      width: 70px;
+
+      font-size: 12px;
+  }
+
+  .join_bar{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+
+  }
+
+  .login{
+      padding: 20px 0;
+      box-sizing: border-box;
+      text-align: center;
+      width: 70px;
+
+      font-size: 12px;
+  }
+
+  .join {
+      padding: 20px 0;
+      box-sizing: border-box;
+      text-align: center;
+      width: 60px;
+
+      font-size: 12px;
+  }
+
+/* <h_img>*/
+
+  /* 백그라운드 이미지로 걸기 
+      글씨로 된 로고 class 는 앞에 파트 이름 붙이고 로고 뒤에 _word 붙이고
+       그림으로 된 로고는 _img 붙이기
+       ex) h_logo_word (헤더에 있는 글씨로 된 로고 이미지)
+            h_logo_img  ( 헤더에 있는 그림 로고 이미지 ) */
+
+  .h_img_box{
+      width: 100%;
+      height: 250px;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+  }
+
+  .h_logo_img {
+      width: 200px;
+      height: 200px;
+      padding: 25px 0px 0px 0px;
+  }
+
+      /* ----------------------------------------- */
+      /* -------------- < nav_bar > ---------------*/
+      /* ----------------------------------------- */
+
+      nav {
+          position: relative;
+      }
+
+      .nav_bar {
+          width: 100%;
+          height: 40px;
+          background-color: #4e5e43;
+          cursor: pointer;
+
+      }
+
+      .nav_ul {
+          height: 40px;
+          display: flex;
+          justify-content: space-around;
+
+          align-items: center;
+
+
+          color: #fffbf2;
+          font-weight: 500;
+          font-size: 15px;
+      }
+
+      /* <nave_page> - 펼쳐지는거,, 음 여기 스크립트로 짤꺼임 */
+
+      .nav_page {
+          width: 100%;
+          height: 0px;
+
+          background-color: #fffbf2;
+          position: absolute;
+          left: 0;
+          top: 100%;
+
+
+          overflow: hidden;
+          transition: all 0.5s;
+
+      }
+
+      .nav_page_ul {
+          display: flex;
+      }
+
+
+      .nav_page_ul > li {
+          color: #4e5e43;
+          font-size: 15px;
+          font-weight: 700;
+          padding: 3px 10px;
+          box-sizing: border-box;
+
+      }
+
+      .nav_page_intro {
+          position: absolute;
+          top: 10px;
+          right: 1268px;
+      }
+
+      .nav_page_process {
+          position: absolute;
+          top: 10px;
+          right: 1132px;
+      }
+
+      .nav_page_adopt {
+          position: absolute;
+          top: 10px;
+          right: 943px;
+      }
+
+      .nav_page_review {
+          position: absolute;
+          top: 10px;
+          right: 725px;
+      }
+
+      .nav_page_merchan {
+          position: absolute;
+          top: 10px;
+          right: 512px;
+      }
+
+      .np {
+          padding-bottom: 5px;
+          box-sizing: border-box;
+      }
+
+
+      /* ----------------------------------------- */
+      /* -------------- < Main > ----------------*/
+      /* ----------------------------------------- */
+
+      /*  main  */
+
+      main {
+          position: relative;
+          width: 700px;
+          margin: 0 auto;
+      }
+
+      .join_title {
+          width: 100%;
+          position: absolute;
+          top: -70px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 25px;
+          font-weight: 700;
+          text-align: center;
+
+      }
+
+      .join_in_box {
+          width: 100%;
+          background-color: white;
+          padding: 50px 30px 0 30px;
+          box-sizing: border-box;
+          border-radius: 30px;
+          margin: 0 auto;
+      }
+
+      .id_msg {
+
+          color: red;
+          width: 100%;
+          height: 20px;
+
+          font-size: 0;
+          padding-bottom: 15px;
+          padding-top: 5px;
+          padding-left: 3px;
+
+      }
+
+      #uid {
+          width: 100%;
+          height: 45px;
+          padding: 10px;
+          box-sizing: border-box;
+
+      }
+
+      main {
+          margin-top: 200px;
+      }
+
+      .i_type1 {
+          width: 100%;
+          height: 45px;
+          padding-left: 10px;
+          box-sizing: border-box;
+          outline: none;
+          margin-bottom: 20px;
+      }
+
+      .indivi_mem {
+          color: gray;
+      }
+
+      .info_desc {
+          display: flex;
+          justify-content: space-between;
+          padding: 15px 0 15px 0;
+      }
+
+      .info_2 {
+          font-size: 14px;
+      }
+
+      input::placeholder {
+          color: lightgray;
+      }
+
+      .tele {
+          width: 100%;
+          display: flex;
+          line-height: 40px;
+          gap: 10px;
+      }
+
+      .tele > * {
+          width: calc(100% / 3);
+          height: 40px;
+          box-sizing: border-box;
+          outline: none;
+          padding-left: 10px;
+          margin-bottom: 20px;
+      }
+
+      .agreement {
+          margin-top: 50px;
+          color: gray;
+      }
+
+      .agree_desc {
+          margin: 10px 0px 10px 5px;
+          font-size: 15px;
+      }
+
+      .extra {
+          margin-top: 40px;
+          font-size: 20px;
+          margin-bottom: 50px;
+      }
+
+      .birth_radio {
+          margin-bottom: 10px;
+
+      }
+
+      .birthday {
+          width: 100%;
+          display: flex;
+          line-height: 40px;
+          gap: 10px;
+      }
+
+      .birthday > * {
+          width: calc(100% / 3);
+          height: 40px;
+          box-sizing: border-box;
+          outline: none;
+          padding-left: 10px;
+          margin-bottom: 20px;
+      }
+
+      /* 이용약관 document */
+
+      .document {
+          width: 100%;
+          border: 1px solid;
+      }
+
+      .docu_1_box {
+          border-bottom: 1px solid;
+          box-sizing: border-box;
+          padding: 20px;
+      }
+
+      .db {
+          padding-bottom: 15px;
+          padding-top: 15px;
+          box-sizing: border-box;
+      }
+
+      .db_1_desc {
+          padding-left: 20px;
+          padding-top: 10px;
+          color: gray;
+      }
+
+      .chk_box {
+          display: flex;
+          align-items: center;
+          position: relative;
+      }
+
+      .chk_mark {
+          font-size: 20px;
+          position: absolute;
+          top: 0;
+          right: 20px;
+      }
+
+      .chk_mark.active {
+          transform: rotateX(180deg);
+      }
+
+      .chk_box > input {
+          margin-left: 20px;
+      }
+
+
+      /* chk_box 안에 regulation explanation */
+
+      .docu_regulation {
+          width: 100%;
+          height: 0;
+          box-sizing: border-box;
+          overflow: hidden;
+          transition: all 0.5s;
+
+      }
+
+      .frist {
+          margin: 50px 50px 20px;
+      }
+
+      .second {
+          margin: 20px 50px;
+      }
+
+      .thrid {
+          margin: 20px 50px;
+      }
+
+      .docu_regulation.active {
+          height: 300px;
+          overflow-y: auto;
+      }
+
+      .submit_btn {
+          width: 100%;
+          height: 50px;
+          background-color: #ffe187;
+          outline: none;
+          border: none;
+
+          margin-top: 30px;
+          margin-bottom: 100px;
+          border-radius: 10px;
+      }
+
+
+      /* ----------------------------------------- */
+      /* -------------- < Footer > ----------------*/
+      /* ----------------------------------------- */
+
+      .footer_box {
+          margin-top: 60px;
+          width: 100%;
+          height: 300px;
+          background-color: #9e9e9e;
+      }
+
+      .footer_title {
+          color: white;
+          padding-top: 50px;
+      }
+
+      .fotter_info, .footer_name {
+          color: white;
+          margin: 20px 0;
+      }
+
+      .footer_role {
+          color: white;
+      }
+
