@@ -1,0 +1,182 @@
+/* 표로 아이들 상세 정보 한눈에 보도록 정리 */
+
+table {
+    user-select: none;
+    border-collapse: collapse;
+    width: 50%;
+    margin: 100px auto;
+    margin-bottom: 60px;
+}
+td, th {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    width: 25%;
+    font-weight: 600;
+}
+
+/* @@@@@@@@@@@@@@@@@ */
+
+
+/* 아이 이름을 한번 더 언급해주는 코드  */
+.ani_info_txt{
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    user-select: none;
+}
+
+
+/* 아이 이미지를 담는 박스 */
+.ani_img_box{
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    user-select: none;
+}
+
+/* 아이 이미지 */
+.ani_img{
+    width: 400px;
+    height: 400px;
+    background-color: yellow;
+    user-select: none;
+}
+
+/* 아이에 특징에 대한 설명 */
+.ani_details_txt{
+    margin: 70px 0;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    user-select: none;
+}
+
+/* ################################# 입양 절차 및 유의사항 ################################# */
+
+.adoption_seq_area{
+    width: 100%;
+    text-align: center;
+}
+
+/* 입양절차 및 유의사항 - 타이틀 */
+.adoption_seq_title{
+    color: #f2bf4a;
+    font-size: 30px;
+    font-weight: 700;
+    user-select: none;
+}
+
+/* 입양절차 박스를 잡는 전체 구역 */
+.adoption_seq_box{
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+/* 입양절차 박스스 */
+.adoption_seq{
+    width: 30%;
+    height: 480px;
+    margin-top: 30px;
+    background-color: #ffe187 ;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* 입양절차 박스 번호 */
+.adoption_seq_num{
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* 입양절차 박스 제목 */
+.adoption_seq_title_txt{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+/* 입양절차 박스 안에 라인 */
+.adoption_seq_line{
+    width: 90%;
+    height: 4px;
+    border-top: 2px solid white;
+    margin: 0 auto;
+    margin-top: 16px;
+}
+
+/* 입양절차 박스 안에 상세 설명명 */
+.adoption_seq_txt{
+    margin: 25px 0;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+/* 입양절차 두번째 박스 글간격 수정정 */
+.adoption_seq_txt2{
+    line-height: 1.2;
+}
+
+.adoption_notice{
+    text-align: left;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.adoption_notice_red{
+    color: red;
+}
+
+
+/* ################################# 입양신청서 작성 버튼 ################################# */
+
+.adoption_btn{
+    width: 250px;
+    height: 60px;
+    background-color: #ffe187;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    margin: 50px auto;
+    margin-bottom: 120px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    line-height: 60px;
+    user-select: none;
+
+}
+
+.adoption_btn:hover{
+    background-color: #f2bf4a;
+}
+
+
+/* ################################# 목록으로 넘어가기 이전으로 넘어가기 다음으로 넘어가기기 ################################# */
+
+
+/* 목록으로 돌아가기 버튼 */
+.list_box{
+    width: 22%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    user-select: none;
+}
+
+
+/* --------------------------- */
+
+/* footer은 따로  css 빼둠 */
