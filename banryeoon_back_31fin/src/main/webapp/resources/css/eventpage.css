@@ -1,0 +1,138 @@
+/*.eventpage_title{*/
+/*    text-align: center;*/
+/*    padding: 25px 0 5px;*/
+/*    margin: 0;*/
+/*    background-color: yellowgreen;*/
+/*}*/
+/*.event-section {*/
+/*    background-color: pink;*/
+/*    width: 100%;*/
+/*    text-align: center;*/
+/*    margin: 40px 0;*/
+/*}*/
+
+/*.event-grid {*/
+/*    width: 845px;*/
+/*    margin: 0 auto;*/
+/*    text-align: left;*/
+/*    position: relative;*/
+/*    */
+/*}*/
+
+/*.event-item {*/
+/*    width: 200px;*/
+/*    height: 240px;*/
+/*    background: #fff;*/
+/*    border-radius: 12px;*/
+/*    box-shadow: 0 2px 8px #333;*/
+/*    margin: 0 15px 30px 0; !* 오른쪽 15px, 아래 30px *!*/
+/*    float: left;*/
+/*    overflow: hidden;*/
+/*    position: relative;*/
+/*    display: block;*/
+/*    text-decoration: none;*/
+/*    color: inherit;*/
+/*}*/
+
+/*.event-item:nth-child(4n) {*/
+/*    margin-right: 0; !* 4번째마다 오른쪽 마진 제거 *!*/
+/*}*/
+
+/*.event-item img {*/
+/*    width: 100%;*/
+/*    height: 140px;*/
+/*    display: block;*/
+/*    !* object-fit: cover; 구형 브라우저는 정사각 이미지 준비 *!*/
+/*}*/
+
+/*.event-info {*/
+/*    width: 100%;*/
+/*    height: 100px;*/
+/*    background: #cb6868;*/
+/*    text-align: center;*/
+/*    padding-top: 30px;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*.event-title {*/
+/*    font-size: 16px;*/
+/*    font-weight: bold;*/
+/*    color: #333;*/
+/*    margin-bottom: 4px;*/
+/*    white-space: nowrap;*/
+/*    overflow: hidden;*/
+/*    text-overflow: ellipsis; !*넘치면 ... 표시, 선택사항*!*/
+/*    padding: 0 15px 0 15px;*/
+/*}*/
+
+/*.event-date {*/
+/*    font-size: 12px;*/
+/*    color: #888;*/
+/*}*/
+
+/*!* float 해제 *!*/
+/*.event-grid:after {*/
+/*    content: "";*/
+/*    display: block;*/
+/*    clear: both;*/
+/*}*/
+
+
+.event-section {
+    padding: 20px;
+}
+
+.event-grid {
+    display: grid;
+    /* 3열 레이아웃 */
+    grid-template-columns: repeat(3, calc(100% / 3));
+    /* 칸 사이 간격 20px */
+    gap: 20px;
+}
+
+.event-item {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    background-color: #fff;
+}
+
+.event-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1{
+    margin: 60px auto;
+    text-align: center;
+}
+
+.event-item img {
+    /*width: 100%;*/
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: block;
+    background-color: skyblue;
+}
+
+.event-item .info {
+    padding: 12px;
+}
+
+.event-item .title {
+    font-size: 1rem;
+    white-space: pre-line; /* 줄바꿈 (\n) 적용 */
+    margin-bottom: 8px;
+
+}
+
+.event-item .date {
+    font-size: 0.9rem;
+    color: #666;
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bitstudy.app.mapper.CommentMapper">
+
+<insert id="insert" parameterType="com.bitstudy.app.dto.CommentDto" useGeneratedKeys="true" keyProperty="commentId">
+    INSERT INTO comment (commentPostId, commentWriter, commentContent, commentTime)
+    VALUES (#{commentPostId}, #{commentWriter}, #{commentContent}, #{commentTime})
+</insert>
+
+<delete id="delete" parameterType="map">
+    DELETE FROM comment
+    WHERE commentId = #{commentId} AND commentWriter = #{commentWriter}
+</delete>
+
+<delete id="deleteAll">
+    delete from comment where postId=#{postId}
+</delete>
+
+
+<update id="update" parameterType="com.bitstudy.app.dto.CommentDto">
+    UPDATE comment
+    SET commentContent = #{commentContent},
+        commentTime = #{commentTime}
+    WHERE commentId = #{commentId}
+      AND commentWriter = #{commentWriter}
+</update>
+
+    <select id="selectByPostId" parameterType="java.lang.Integer" resultType="com.bitstudy.app.dto.CommentDto">
+        SELECT * FROM comment
+        WHERE commentPostId = #{postId}  <!-- 실제 DB 컬럼명과 일치해야 함 -->
+        ORDER BY commentTime ASC
+    </select>
+
+<select id="selectById" parameterType="int" resultType="com.bitstudy.app.dto.CommentDto">
+    SELECT * FROM comment WHERE commentId = #{commentId}
+</select>
+
+</mapper>
