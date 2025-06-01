@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitstudy.app.mapper.FormMapper">
+<!-- 입양 폼 전부 데이터 베이스에 인서트 해주는 용-->
+    <insert id="insertForm" parameterType="com.bitstudy.app.dto.FormDto">
+        INSERT INTO banryeoon_db.adoptionform (
+            petSeqno, applicantName, contact, email, preferredCallTime, residenceArea, maritalStatus, longTermAgreement, feeAgreement
+        ) VALUES (
+                     #{petSeqno}, #{applicantName},#{contact},#{email},#{preferredCallTime},#{residenceArea},#{maritalStatus},#{longTermAgreement},#{feeAgreement}
+                 )
+    </insert>
+
+
+
+<!--petSeqno 기준으로 삭제-->
+    <delete id="delete" parameterType="com.bitstudy.app.dto.FormDto">
+        DELETE FROM banryeoon_db.adoptionform WHERE petSeqno = #{petSeqno}
+    </delete>
+
+
+<!--전체 삭제-->
+    <delete id="deleteAll">
+        truncate banryeoon_db.adoptionform;
+    </delete>
+
+
+
+
+
+
+</mapper>

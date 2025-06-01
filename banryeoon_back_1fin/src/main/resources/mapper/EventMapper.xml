@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bitstudy.app.mapper.EventMapper">
+
+    <select id="selectEventList" resultType="com.bitstudy.app.dto.EventDto">
+        SELECT eventSeqno, eventName, eventImg, eventDate
+        FROM banryeoon_db.eventList
+        ORDER BY eventSeqno DESC
+    </select>
+
+    <select id="selectEventBySeqno" parameterType="int" resultType="com.bitstudy.app.dto.EventDto">
+        SELECT eventSeqno, eventName, eventImg, eventDate, eventDesc FROM banryeoon_db.eventList WHERE eventSeqno = #{eventSeqno}
+    </select>
+
+
+</mapper>

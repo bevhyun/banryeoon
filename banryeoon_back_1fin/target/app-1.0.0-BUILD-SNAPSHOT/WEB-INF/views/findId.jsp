@@ -1,0 +1,74 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/Find_id.css">
+</head>
+<body>
+
+  <!-- 비밀번호 찾기 팝업업 -->
+    <main>
+        <div class="popup_overlay" id="popupOverlay">
+            <div class="popup">
+                <div class="id_pop_title">아이디 찾기</div>
+                <div class="id_pop_desc">가입하신 이름과 핸드폰 번호로 아이디 찾기가 가능합니다.</div>
+                <form action="#" class="layer">
+                    <div class="find_W_name_box">
+                        <div class="fname_title">이름</div>
+                        <input type="text" id="f_name" name="f_uname" >
+                    </div>
+
+                <div class="find_W_ph_box">
+                    <div class="fph_title">전화번호</div>
+                        <select name="" id="f_tel_list" name="p_first">
+                            <option value="-1">선택</option>
+                            <option value="010">010</option>
+                            <option value="016">016</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                        </select> -
+
+                        <input type="tel" name="p_middle" class="phone_n_middle"> -
+                        <input type="tel" name="p_last" class="phone_n_last">
+                </div>
+
+                <div class="close_btn_box">
+                    <input type="submit" value="확인" class="close_btn" id="closePopup">
+                </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+  <script>
+// 로그인 팝업 스크립트
+
+ const open_id_pop = document.querySelector('.open_id_pop');
+    const closeBtn = document.getElementById('closePopup');
+    const popupOverlay = document.getElementById('popupOverlay');
+
+    // 팝업 열기
+    open_id_pop.addEventListener('click', () => {
+      popupOverlay.style.display = 'flex';
+    });
+
+    // 팝업 닫기
+    closeBtn.addEventListener('click', () => {
+      popupOverlay.style.display = 'none';
+    });
+
+    // 배경 클릭 시 팝업 닫기 (선택사항)
+    popupOverlay.addEventListener('click', (e) => {
+      if (e.target === popupOverlay) {
+        popupOverlay.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
