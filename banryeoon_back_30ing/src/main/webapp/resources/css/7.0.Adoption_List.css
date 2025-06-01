@@ -1,0 +1,174 @@
+/* 제목 - 입양 가능 아이들 */
+.adoption_list_title{
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 40px auto;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* 입양 지역 검색 기능 */
+.adoption_list_search{
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: right;
+    margin-bottom: 50px;
+}
+
+form{
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+input{
+    width: 300px;
+    height: 40px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    padding: 0 13px;
+}
+
+form >button {
+    width: 50px;
+    height: 40px;
+    border: none;
+}
+
+/* ------------------------------------ */
+
+/* 입양 가능 아이들 게시판 만들기 */
+
+.adoption_content{
+    width: 20%;
+    height: 20%;
+    background-color: pink;
+}
+
+
+.adoption_img{
+    width: 100%;
+    height: 90%;
+}
+
+.adoption_title{
+    width: 100%;
+    display: flex;
+}
+
+.post_info, .post_view{
+    display: flex;
+}
+
+.post_info{
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+td {
+    width: 25%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.adoption_title {
+    margin-top: 10px;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.adoption_area{
+    width: 100%;
+    text-align: left;
+}
+
+
+/* 페이지네이션 */
+
+
+/* —— Pagination Container —— */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 60px 0 10px 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* —— 페이지 번호 리스트 —— */
+    .pagination ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 8px;
+    }
+
+    /* —— 각각의 페이지 버튼 —— */
+    .pagination a {
+        display: block;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    /* —— 버튼 호버 시 효과 —— */
+    .pagination a:hover {
+        background-color: #f0f0f0;
+    }
+
+    /* —— 활성화된(현재) 페이지 —— */
+    .pagination .active {
+        background-color: #007bff;
+        color: #fff;
+        border-color: #007bff;
+        cursor: default;
+    }
+
+    /* —— 이전/다음 버튼 스타일 —— */
+    .pagination .prev,
+    .pagination .next {
+        font-weight: bold;
+    }
