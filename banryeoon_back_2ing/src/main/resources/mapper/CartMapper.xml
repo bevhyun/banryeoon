@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bitstudy.app.mapper.CartMapper">
+
+    <!-- 장바구니 조회 (중복 여부 확인) -->
+    <select id="findCartItem" resultType="com.bitstudy.app.dto.CartItemDto" parameterType="com.bitstudy.app.dto.CartItemDto">
+        SELECT * FROM cart_items
+        WHERE userId = #{userId} AND productID = #{productID}
+    </select>
+
+    <insert id="addToCart" parameterType="com.bitstudy.app.dto.CartItemDto"
+            useGeneratedKeys="true" keyProperty="cartItemId" flushCache="true">
+        INSERT INTO cart_items (userId, productID, productName, productPrice, productImgUrl, quantity)
+        VALUES (#{userId}, #{productID}, #{productName}, #{productPrice}, #{productImgUrl}, #{quantity})
+    </insert>
+
+    <!-- 장바구니에 새 항목 추가 -->
+    <insert id="insertCartItem" parameterType="com.bitstudy.app.dto.CartItemDto">
+        INSERT INTO cart_items (userId, productID, productName, productPrice, productImgUrl, quantity)
+        VALUES (#{userId}, #{productID}, #{productName}, #{productPrice}, #{productImgUrl}, #{quantity})
+    </insert>
+
+    <!-- 기존 항목 수량 업데이트 -->
+    <update id="updateCartItemQuantity" parameterType="com.bitstudy.app.dto.CartItemDto">
+        UPDATE cart_items
+        SET quantity = quantity + #{quantity}
+        WHERE userId = #{userId} AND productID = #{productID}
+    </update>
+
+    <!-- 유저의 장바구니 목록 -->
+    <select id="getCartByUserId" resultType="com.bitstudy.app.dto.CartItemDto" parameterType="String">
+        SELECT * FROM cart_items WHERE userId = #{userId}
+    </select>
+
+    <!-- 개별 삭제 -->
+    <delete id="deleteCartItem" parameterType="int">
+        DELETE FROM cart_items WHERE cartItemId = #{cartItemId}
+    </delete>
+
+    <!-- 전체 삭제 -->
+    <delete id="clearCartByUserId" parameterType="String">
+        DELETE FROM cart_items WHERE userId = #{userId}
+    </delete>
+    <!--   test-->
+    <select id="countTestCartItem" resultType="int" parameterType="com.bitstudy.app.dto.CartItemDto">
+        SELECT COUNT(*) FROM cart_items
+        WHERE userId = #{userId} AND productID = #{productID}
+    </select>
+
+</mapper>

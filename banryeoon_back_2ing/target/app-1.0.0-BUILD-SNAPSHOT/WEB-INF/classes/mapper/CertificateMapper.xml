@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitstudy.app.mapper.CertificateMapper">
+
+
+<!--    <insert id="insertCerti" parameterType="com.bitstudy.app.dto.CertificateDto">-->
+<!--        INSERT INTO Certification (user_id, content,cerStep, file)-->
+<!--        VALUES (#{user_id}, #{content},#{cerStep}, #{file})-->
+<!--    </insert>-->
+
+    <insert id="insertCerti" parameterType="com.bitstudy.app.dto.CertificateDto">
+        INSERT INTO certification(user_id, cerstep, content, file)
+        VALUES(#{user_id}, #{cerStep}, #{content}, #{file})
+    </insert>
+
+    <select id="getCertiById" parameterType="int" resultType="com.bitstudy.app.dto.CertificateDto">
+        SELECT * FROM Certification WHERE cert_id = #{cert_id}
+    </select>
+
+    <select id="getCertiByUserId" parameterType="String" resultType="com.bitstudy.app.dto.CertificateDto">
+        SELECT * FROM Certification WHERE user_id = #{user_id}
+    </select>
+
+    <delete id="deleteAll" parameterType="int">
+        DELETE FROM Certification
+    </delete>
+
+
+
+
+</mapper>
