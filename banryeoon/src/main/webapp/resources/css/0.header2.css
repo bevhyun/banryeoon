@@ -1,0 +1,185 @@
+
+/* ----------------------------------------- */
+/* --------------- < Header > -------------- */
+/* ----------------------------------------- */
+
+
+
+/* <header_top>*/
+/* 헤더에 들어가는 이미지나 태그는 클라스 이름 앞에 h_ 붙여서 다른 파트 이름이랑 구분하기 */
+
+
+.header_top{
+    width: 100%;
+    border-bottom: 1px solid #c8deb8;
+}
+.h_t_box{
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+
+    position: relative;
+}
+.h_t_desc {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+    text-align: center;
+}
+
+
+.h_logo_word_box{
+    width: 150px;
+    height: 30px;
+
+    margin-top: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+
+
+}
+.h_logo_word{
+    width: 120px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+
+}
+.h_t_box{
+    display: flex;
+
+}
+
+.join_bar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+}
+
+.login{
+    padding: 20px 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 70px;
+
+    font-size: 12px;
+}
+
+.join{
+    padding: 20px 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 60px;
+
+    font-size: 12px;
+
+
+
+
+}
+
+/* <h_img>*/
+
+/* 백그라운드 이미지로 걸기
+    글씨로 된 로고 class 는 앞에 파트 이름 붙이고 로고 뒤에 _word 붙이고
+     그림으로 된 로고는 _img 붙이기
+     ex) h_logo_word (헤더에 있는 글씨로 된 로고 이미지)
+          h_logo_img  ( 헤더에 있는 그림 로고 이미지 ) */
+
+.h_img_box{
+    width: 100%;
+    height: 250px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.h_logo_img{
+    width: 200px;
+    height: 200px;
+    padding: 25px 0px 0px 0px;
+}
+
+/* ----------------------------------------- */
+/* -------------- < nav_bar > ---------------*/
+/* ----------------------------------------- */
+
+nav{
+    position: relative;
+    z-index: 99999;
+}
+.nav_bar{
+    width: 100%;
+    height: 40px;
+    background-color: #4e5e43;
+    cursor: pointer;
+
+
+
+}
+
+.nav_ul{
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fffbf2;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.nav_li{
+    width: 200px;
+    text-align: center;
+}
+
+/* <nave_page> - 펼쳐지는거,, 음 여기 스크립트로 짤꺼임 */
+
+.nav_page{
+    width: 100%;
+    height: 0px;
+
+    background-color: #fffbf2;
+    position: absolute;
+    left: 0;
+    top: 100%;
+
+
+    overflow: hidden;
+    transition: all 0.5s;
+
+}
+
+.nav_page_ul{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+
+.nav_page_ul > li{
+    color: #4e5e43;
+    font-size: 15px;
+    font-weight: 700;
+    padding-top: 8px;
+    box-sizing: border-box;
+    width: 200px;
+}
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitstudy.app.mapper.CouponMapper">
+
+
+	<insert id="insertCoupon" parameterType="com.bitstudy.app.dto.CouponDto">
+		INSERT INTO Coupon (coupon_id, c_name, c_description, expiry_date)
+		VALUES (#{coupon_id},#{c_name}, #{c_description}, #{expiry_date})
+	</insert>
+
+	<select id="selectCoupon" parameterType="int" resultType="com.bitstudy.app.dto.CouponDto">
+		SELECT coupon_id, c_name, c_description, expiry_date
+		FROM Coupon
+		WHERE coupon_id = #{coupon_id}
+	</select>
+
+
+
+	<delete id="deleteAll">
+		DELETE FROM Coupon
+	</delete>
+
+	<insert id="insertCouponIssuedHistory" parameterType="map">
+		INSERT INTO CouponIssuedHistory (coupon_id, user_id, issue_date)
+		VALUES (#{couponId},#{userId}, NOW())
+	</insert>
+
+
+
+
+
+	<select id="selectIssuedCoupons" parameterType="string" resultType="com.bitstudy.app.dto.CouponDto">
+		SELECT *
+		FROM Coupon
+				 INNER JOIN (
+			SELECT coupon_id
+			FROM CouponIssuedHistory
+			where user_id = #{userId}
+		) as hist ON Coupon.coupon_id = hist.coupon_id
+	</select>
+
+
+
+
+
+
+
+</mapper>

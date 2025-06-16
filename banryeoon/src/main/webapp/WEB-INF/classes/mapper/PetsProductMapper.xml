@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--<mapper namespace="com.bitstudy.app.mapper.PetsProductMapper">-->
+<mapper namespace="com.bitstudy.app.mapper.PetsProductMapper">
+
+
+<!--  상품 정보 전체 조회  -->
+    <select id="getAllPetsProducts" resultType="com.bitstudy.app.dto.PetsProductDto">
+        SELECT * FROM Pets_product;
+    </select>
+
+<!-- 상품 seqno으로 상품 전체 정보 조회 -->
+    <select id="adminProductById" parameterType="int" resultType="com.bitstudy.app.dto.PetsProductDto">
+        SELECT * FROM banryeoon_db.Pets_product WHERE productID LIKE CONCAT('%', #{productID}, '%')
+    </select>
+
+<!--  상품 seqno으로 상품 정보 삭제  -->
+    <delete id="PetsProductDelete" parameterType="int">
+        DELETE FROM banryeoon_db.Pets_product WHERE productID =#{productID}
+    </delete>
+
+    <!-- 상품 이름으로 상품 전체 정보 조회 -->
+    <select id="getPetsProductByName" parameterType="string" resultType="com.bitstudy.app.dto.PetsProductDto">
+        SELECT * FROM banryeoon_db.Pets_product WHERE productName LIKE CONCAT('%', #{productName}, '%')
+    </select>
+
+    <!-- 고양이 강아지 상품 전체 정보 조회 -->
+    <select id="getPetsProductByType" parameterType="int" resultType="com.bitstudy.app.dto.PetsProductDto">
+        SELECT * FROM banryeoon_db.Pets_product WHERE productType LIKE CONCAT('%', #{productType}, '%')
+    </select>
+
+
+<!--  상민님 Mapper  -->
+
+    <!-- 최근 등록된 상품 5개 조회 (전체 대상 내림차순 5개) -->
+    <select id="getRecentProducts" resultType="com.bitstudy.app.dto.PetsProductDto">
+        SELECT * FROM Pets_product ORDER BY productCreatedAt DESC LIMIT 5
+    </select>
+
+    <!-- 동물 타입별 최근 상품 5개 조회 (강아지/고양이 신상품) -->
+    <select id="getRecentProductsByAniTypeCd" parameterType="int" resultType="com.bitstudy.app.dto.PetsProductDto">
+        SELECT * FROM Pets_product WHERE aniTypeCd = #{aniTypeCd} ORDER BY productCreatedAt DESC LIMIT 5
+    </select>
+
+    <!-- 전체 상품 조회 -->
+    <select id="selectAll" resultType="com.bitstudy.app.dto.PetsProductDto">
+        SELECT productID, productName, productDescription, productPrice, productImg, productCreatedAt, aniTypeCd
+        FROM Pets_product
+        <!-- 모든 컬럼 지정하여 전체 상품 리스트 반환 -->
+    </select>
+
+    <!-- 단일 상품 조회 (상품 ID 기준) -->
+    <select id="selectById" parameterType="int" resultType="com.bitstudy.app.dto.PetsProductDto">
+        SELECT * FROM pets_product WHERE productID = #{productID}
+        <!-- 특정 상품 ID로 상세 페이지용 데이터 조회 -->
+    </select>
+
+    <!-- 동물 타입별 전체 상품 조회 (강아지/고양이용) -->
+    <select id="getProductsByAniTypeCd" parameterType="int" resultType="com.bitstudy.app.dto.PetsProductDto">
+        SELECT productID, productName, productDescription, productPrice, productImg, productCreatedAt, aniTypeCd
+        FROM Pets_product
+        WHERE aniTypeCd = #{aniTypeCd}
+        <!-- aniTypeCd = 100: 강아지 / 200: 고양이 -->
+    </select>
+
+    <!-- 상품 등록 -->
+    <insert id="PetsProductInsert" parameterType="com.bitstudy.app.dto.PetsProductDto">
+        INSERT INTO Pets_product (
+        productID,
+        productName,
+        productDescription,
+        productPrice,
+        productImg,
+        productCreatedAt
+        )
+        VALUES (
+        #{productID},
+        #{productName},
+        #{productDescription},
+        #{productPrice},
+        #{productImg},
+        #{productCreatedAt}
+        )
+        <!-- DTO의 필드 값을 매핑하여 상품 1개를 등록 -->
+    </insert>
+
+    <!-- 상품 정보 수정 -->
+    <update id="PetsProductUpdate" parameterType="com.bitstudy.app.dto.PetsProductDto">
+        UPDATE Pets_product
+        SET
+        productName = #{productName},
+        productDescription = #{productDescription},
+        productPrice = #{productPrice},
+        productImg = #{productImg},
+        productCreatedAt = #{productCreatedAt}
+        WHERE productID = #{productID}
+        <!-- productID로 대상을 찾아서 해당 상품의 모든 정보 업데이트 -->
+    </update>
+
+<!--    &lt;!&ndash; 상품 삭제 &ndash;&gt;-->
+<!--    <delete id="PetsProductDelete" parameterType="int">-->
+<!--        DELETE FROM Pets_product WHERE productID = #{productID}-->
+<!--        &lt;!&ndash; 특정 productID의 상품을 DB에서 삭제 &ndash;&gt;-->
+<!--    </delete>-->
+
+    <!-- 상품명으로 키워드 검색 -->
+    <select id="searchByName" parameterType="String" resultType="com.bitstudy.app.dto.PetsProductDto">
+        SELECT * FROM Pets_product WHERE productName LIKE CONCAT('%', #{keyword}, '%')
+        <!-- productName 안에 keyword가 포함된 상품들 조회 (LIKE 검색) -->
+    </select>
+
+
+    <!-- 전체 상품 페이징 처리 -->
+    <select id="getProductsByPage" resultType="com.bitstudy.app.dto.PetsProductDto">
+        SELECT * FROM Pets_product ORDER BY productID DESC LIMIT #{limit} OFFSET #{offset}
+        <!-- offset부터 litmit 개수까지 -->
+    </select>
+
+    <!-- 동물 타입별 페이징 처리 -->
+    <select id="getProductsByAniTypeCdPaged" resultType="com.bitstudy.app.dto.PetsProductDto">
+        SELECT * FROM Pets_product WHERE aniTypeCd = #{aniTypeCd} ORDER BY productID DESC LIMIT #{pageSize} OFFSET #{offset}
+    </select>
+
+
+    <!-- 키워드 + 동물타입 필터 동시적용해서 검색 -->
+    <select id="searchByNameAndType" parameterType="map" resultType="com.bitstudy.app.dto.PetsProductDto">
+        SELECT * FROM Pets_product WHERE productName LIKE CONCAT('%', #{keyword}, '%') AND aniTypeCd = #{aniTypeCd}
+    </select>
+
+
+</mapper>

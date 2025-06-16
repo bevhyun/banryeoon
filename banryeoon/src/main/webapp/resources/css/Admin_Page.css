@@ -1,0 +1,409 @@
+/* 사이드바 스타일 */
+.tab_box{
+    display: flex;
+}
+
+.sidebar {
+    padding-top: 50px;
+    width: 300px;
+    background-color:#4e5e43;
+    color: #fffbf2;
+    height: 810px;
+    border: 1px solid #fffbf2;
+    position: relative;
+}
+.withdrawButton{
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.sidebar-header {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #fffbf2;
+}
+
+.sidebar-tabs {
+    list-style: none;
+}
+
+.tab-item {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-item:hover {
+    background-color: #313b2b;
+}
+
+.tab-item.active {
+    background-color: #313b2b;
+    border-left: 4px solid #fffbf2;
+}
+
+/* 콘텐츠 영역 스타일 */
+
+.content {
+    width: 100%;
+    height: 750px;
+    padding: 30px;
+    padding-top: 80px;
+    background-color: #fffbf2 ;
+    position: relative;
+}
+
+.tab-content {
+    height: 700px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.content-header {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ----------------------------------------- */
+/* ------------- <Admin 공통 검색 기능, 공통 페이지네이션> --------*/
+/* ----------------------------------------- */
+/* 검색 바 */
+.search_bar{
+    display: flex;
+    gap: 20px;
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+#userManage, #aniManage{
+    width: 150px;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.admin_search_form{
+   display: flex;
+    gap: 10px;
+}
+.search-container{
+  width: 100%;
+  display: flex;
+    gap: 10px;
+}
+.search-input{
+    width: 550px;
+    height: 35px;
+    outline: none;
+    padding-left: 10px;
+}
+.search-button{
+     width: 70px;
+    height: 40px;
+    margin-left: 0;
+    background-color: #4e5e43;
+    color: white;
+    border: none;
+}
+
+/* 검색 글 */
+
+table {
+    width: 70%;
+    margin: 50px auto;
+    border: 2px solid #d1cd9e;
+    
+}
+table thead {
+    border-bottom: 2px solid #d1cd9e;
+}
+table thead,
+table tbody,
+table th,
+table td { display: block }
+
+table tr { display: flex; align-items: center; height: 50px; }
+table th, table td { text-align: center; padding: 0 10px; font-size: 15px;}
+
+table tr.boardBody { background: #e8e8e8; }
+table tr.boardBody:nth-child(odd) {
+    background: #f9f9f9;
+}
+table tr.boardBody:hover {
+    background: #fff !important;
+}
+
+thead .title { text-align: center;}
+
+/*.s_no { width: 100px; }*/
+/*.s_email { width: calc(100% - 500px);  text-align: center;}*/
+/*.s_name { width: 100px; }*/
+/*.s_regDate { width: 100px; }*/
+/*.s_yesno { width: 100px; }*/
+/*.s_out{*/
+/*    width: 40px;*/
+/*    margin-right: 5px;*/
+/*}*/
+
+.s_no { width: 70px; }
+.s_id { width: 90px }
+.s_email { width: 150px;  text-align: center;}
+.s_name { width: 80px; }
+.s_phone { width: 100px; }
+.s_adopnum { width: 80px; }
+.s_out{
+    width: 40px;
+    margin-right: 5px;
+}
+
+.s_out_c{
+     height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #9e9e9e;
+    margin-right: 5px;
+    border-radius: 10px;
+    background-color: #4e4e4e;
+    color: white;
+    font-weight: 500;
+}
+
+
+
+
+/* 페이지네이션 */
+
+
+/* —— Pagination Container —— */
+    .pagination {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 60px 0 10px 0;
+        font-family: Arial, sans-serif;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* —— 페이지 번호 리스트 —— */
+    .pagination ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 8px;
+    }
+
+    /* —— 각각의 페이지 버튼 —— */
+    .pagination a {
+        display: block;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    /* —— 버튼 호버 시 효과 —— */
+    .pagination a:hover {
+        background-color: #f0f0f0;
+    }
+
+    /* —— 활성화된(현재) 페이지 —— */
+    .pagination .active {
+        background-color: #007bff;
+        color: #fff;
+        border-color: #007bff;
+        cursor: default;
+    }
+
+    /* —— 이전/다음 버튼 스타일 —— */
+    .pagination .prev,
+    .pagination .next {
+        font-weight: bold;
+    }
+
+
+
+/* ----------------------------------------- */
+/* ------------- < 동물 조회 > ---------------*/
+/* ----------------------------------------- */
+
+table {
+    width: 70%;
+    margin: 50px auto;
+    border: 2px solid #d1cd9e;
+    
+}
+table thead {
+    border-bottom: 2px solid #d1cd9e;
+}
+table thead,
+table tbody,
+table th,
+table td { display: block }
+
+table tr { display: flex; justify-content: space-between; height: 65px; }
+table th, table td { text-align: center; padding: 0 10px; font-size: 15px;}
+
+table tr.boardBody { background: #e8e8e8; }
+table tr.boardBody:nth-child(odd) {
+    background: #f9f9f9;
+}
+table tr.boardBody:hover {
+    background: #fff !important;
+}
+
+thead .title { text-align: center;}
+
+.s_no { width: 100px; }
+.s_breed { width:200px;  text-align: center;}
+.s_region { width: 100px; }
+.s_regDate { width: 100px; }
+.s_yesno { width: 100px; }
+.s_out{
+    width: 40px;
+    margin-right: 5px; 
+}
+.s_out_c{
+     height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #9e9e9e;
+    margin-right: 5px;
+    border-radius: 10px;
+    background-color: #4e4e4e;
+    color: white;
+    font-weight: 500;
+}
+
+/* 조회 게시글  */
+
+.thumbnail_box{
+    width: 70%;
+    height: 480px;
+    margin: 50px auto;
+}
+.thumbnail_ul{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.thumbnail_li{
+    height: 230px;
+    width: calc(100%/4);
+    border: 1px solid #333;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.thumbnail_li  > img {
+  width: 100%;
+  height: 170px; /* 원하는 높이로 조정 */
+  object-fit: cover; /* 비율 유지하며 잘라냄 */
+  border-radius: 6px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.thumbnail_li > a > img {
+    display: block;
+    width: 100%;
+    height: 80%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.post_info{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+}
+
+.admin_proud_btn{
+    height:20px;
+    width: 60px;
+    cursor: pointer;
+
+    text-align: center;
+    line-height: 20px;
+    border: 1px solid #9e9e9e;
+    border-radius: 10px;
+    background-color: #4e4e4e;
+    color: white;
+    font-weight: 500;
+}
+
+.adoppost_flex{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* 상품 조회 게시판 */
+.p_no { width: 100px; }
+.p_name { width:180px;  text-align: center;}
+.p_price { width: 120px; }
+.p_regDate { width: 100px; }
+.p_yesno { width: 100px; }
+.p_out{
+    width: 40px;
+    margin-right: 5px; 
+}
+.p_out_c{
+     height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #9e9e9e;
+    margin-right: 5px;
+    border-radius: 10px;
+    background-color: #4e4e4e;
+    color: white;
+    font-weight: 500;
+}
+
+
+
+
+
+
+/* ----------------------------------------- */
+/* -------------- < Footer > ----------------*/
+/* ----------------------------------------- */
+
+.footer_box{
+    
+    width: 100%;
+    height: 300px;
+    background-color: #9e9e9e;
+}
+
+.footer_title{
+    color: white;
+    padding-top: 50px;
+}
+
+.fotter_info, .footer_name{
+    color: white;
+    margin: 20px 0;
+}
+
+.footer_role{
+    color: white;
+}

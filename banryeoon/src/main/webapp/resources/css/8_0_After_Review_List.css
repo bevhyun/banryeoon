@@ -1,0 +1,290 @@
+/* 제목 - 네비바 밑 타이틀 */
+.list_title{
+    width: 250px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 40px auto;
+    text-align: center;
+    line-height: 50px;
+}
+
+.proud_header_box{
+    width: 1200px;
+}
+
+/* 글쓰기 버튼이랑 서치바 flex처리한 박스 */
+.post_func{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 버튼 기본 스타일 */
+#post_btn {
+    width: 100px;
+    height: 40px;
+    background-color: #ffe187;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background-color 0.2s;
+}
+
+#post_btn:hover {
+    background-color: #dbbf6a;
+}
+
+/* 입양 지역 검색 기능 */
+.list_search{
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: right;
+
+}
+
+.search_list{
+    border: none;
+    padding: 10px;
+    outline: none;
+}
+
+form{
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+input{
+    width: 300px;
+    height: 40px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    padding: 0 13px;
+}
+
+form >button {
+    width: 50px;
+    height: 40px;
+    border: none;
+}
+
+
+/* ------------------------------------ */
+
+/* 우리 아이 자랑 아이들 게시판 만들기 */
+
+.adoption_content{
+    width: 20%;
+    height: 20%;
+    background-color: pink;
+}
+
+
+.post_title, .post_user{
+    /* width: 100%; */
+    margin-top: 10px;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post_user{
+    font-size: 14px;
+    color: #333;
+}
+
+.post_info, .post_view{
+    display: flex;
+}
+
+.post_info{
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+td {
+    width: 25%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 게시판 목록 테이블 전체 스타일 */
+.board_table {
+    width: 1200px;
+    margin: 40px auto 0 auto;
+    border-collapse: separate;
+    border-spacing: 16px 24px;
+    background: #fff;
+}
+
+/* 한 줄에 4개씩 카드형 정렬 */
+.board_table td {
+    width: 22%;
+    min-width: 200px;
+    background: #faf8f4;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 18px 12px 16px 12px;
+    vertical-align: top;
+    text-align: center;
+    transition: box-shadow 0.2s;
+}
+.board_table td:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    background: #fffbe7;
+}
+.post_card, .post_title a, .image_container {
+    cursor: pointer;
+}
+
+/* 이미지 컨테이너 */
+.image_container {
+    width: 100%;
+    height: 160px;
+    background: #f3f3f3;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image_container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* 게시글 제목 */
+.post_title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 게시글 내용 */
+.post_content {
+    font-size: 0.97em;
+    color: #666;
+    margin-bottom: 10px;
+    height: 38px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+/* 게시글 작성 시간 */
+.post_time {
+    font-size: 0.88em;
+    color: #b3a580;
+    margin-top: 6px;
+}
+
+
+
+/* 페이지네이션 */
+
+
+/* —— Pagination Container —— */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 60px 0 10px 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* —— 페이지 번호 리스트 —— */
+    .pagination ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 8px;
+    }
+
+    /* —— 각각의 페이지 버튼 —— */
+    .pagination a {
+        display: block;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    /* —— 버튼 호버 시 효과 —— */
+    .pagination a:hover {
+        background-color: #f0f0f0;
+    }
+
+    /* —— 활성화된(현재) 페이지 —— */
+    .pagination .active a{
+        background-color: #c8c8c8;
+        color: #000000;
+        border-color: rgba(0, 0, 0, 0.34);
+        cursor: default;
+        font-weight: bold;
+    }
+    .pagination li.active {
+        background: none;   /* li에도 배경색 제거 */
+    }
+
+    /* —— 이전/다음 버튼 스타일 —— */
+    .pagination .prev,
+    .pagination .next {
+        font-weight: bold;
+    }
+
+    .hidden-cell {
+        visibility: hidden;
+    }
+

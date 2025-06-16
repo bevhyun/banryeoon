@@ -1,0 +1,681 @@
+@font-face {
+  font-family: 'LINESeedKR-Bd';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body{
+  font-family: 'LINESeedKR-Bd';
+}
+
+/* ---------------------------------------- */
+/* --------------- < modal > -------------- */
+/* ----------------- ---------------------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999999999999999999999999999999999999999; /* 높은 z-index로 설정 */
+}
+
+/* 모달 박스 */
+.modal {
+  width: 400px;
+  height: 400px;
+  /*background-color: #007bff;*/
+  background: url('/resources/img/modal3.png') center/cover no-repeat;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* X 버튼 */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dont-show-today {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  font-size: 12px;
+  color: #333;;
+  cursor: pointer;
+}
+
+.dont-show-today input[type="checkbox"] {
+  cursor: pointer;
+  transform: scale(0.9);
+}
+
+.content {
+  padding: 40px;
+  text-align: center;
+}
+
+.content h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+
+
+
+
+    /* ----------------------------------------- */
+    /* --------------- < Header > -------------- */
+    /* ----------------------------------------- */
+  
+
+
+/* <header_top>*/
+  /* 헤더에 들어가는 이미지나 태그는 클라스 이름 앞에 h_ 붙여서 다른 파트 이름이랑 구분하기 */
+
+
+  .header_top{
+      width: 100%;
+     border-bottom: 1px solid #c8deb8;
+  }
+  .h_t_box{
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    
+    position: relative;
+  }
+.h_t_desc {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+    text-align: center;
+}
+ 
+
+  .h_logo_word_box{
+    width: 150px;
+    height: 30px;
+
+    margin-top: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+
+   
+  }
+  .h_logo_word{
+    width: 120px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+
+  }
+  .h_t_box{
+    display: flex;
+    
+  }
+
+  .join_bar{
+    width: 100%;
+    height: 100%;
+   display: flex;
+   justify-content: end;
+   align-items: center;
+    
+  }
+  
+  .login{
+    padding: 20px 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 70px;
+    
+    font-size: 12px; 
+  }
+  
+  .join{
+    padding: 20px 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 60px;
+    
+    font-size: 12px;
+  
+  
+
+    
+  }
+
+/* <h_img>*/
+
+  /* 백그라운드 이미지로 걸기 
+      글씨로 된 로고 class 는 앞에 파트 이름 붙이고 로고 뒤에 _word 붙이고
+       그림으로 된 로고는 _img 붙이기
+       ex) h_logo_word (헤더에 있는 글씨로 된 로고 이미지)
+            h_logo_img  ( 헤더에 있는 그림 로고 이미지 ) */
+
+  .h_img_box{
+    width: 100%;
+    height: 250px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+  }
+
+  .h_logo_img{
+    width: 200px;
+    height: 200px;
+    padding: 25px 0px 0px 0px;
+  }
+
+/* ----------------------------------------- */
+/* -------------- < nav_bar > ---------------*/
+/* ----------------------------------------- */
+
+nav{
+  position: relative;
+  z-index: 99999;
+}
+.nav_bar{
+  width: 100%;
+  height: 40px;
+  background-color: #4e5e43;
+  cursor: pointer;
+
+
+
+}
+
+.nav_ul{
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fffbf2;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.nav_li{
+  width: 200px;
+  text-align: center;
+}
+
+/* <nave_page> - 펼쳐지는거,, 음 여기 스크립트로 짤꺼임 */
+
+.nav_page{
+  width: 100%;
+  height: 0px;
+
+  background-color: #fffbf2;
+  position: absolute;
+  left: 0;
+  top: 100%;
+
+
+  overflow: hidden;
+  transition: all 0.5s;
+
+}
+
+.nav_page_ul{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+
+.nav_page_ul > li{
+  color: #4e5e43;
+  font-size: 15px;
+  font-weight: 700;
+  padding-top: 8px;
+  box-sizing: border-box;
+  width: 200px;
+}
+
+
+
+
+
+
+
+
+/* ----------------------------------------- */
+/* --------------- < Main > -----------------*/
+/* ----------------------------------------- */
+
+
+/* <main_banner_box>*/
+/*  여기 들어가는 이미지는 네비바에 있는 페이지로 이동 할때마다 그 토픽에 맞는 배경으로 바뀌게 할것.
+구냥 페이지마다 다른 배경 이미지 넣으심 됩니다용 */
+.main_banner_box{
+  width: 100%;
+  height: 400px;
+  background-color:antiquewhite;
+  z-index: 0;
+}
+
+  .mainbanner{
+    width: 100%;
+    height: 400px;
+  }
+
+  .main_banner_box > .swiper{
+    height: 400px;
+  }
+  main{
+      position: relative;
+    }
+    .main_banner_dog{
+      width: 100%;
+      height: 450px;
+      background: url(../../img/mainbanner1.jpg)  center/cover no-repeat;
+
+    }
+    .title_dog{
+      width: 700PX;
+      height: 130PX;
+      position: absolute;
+      bottom: 30px;
+      left: 35px;
+      font-size: 40px;
+      font-weight: 900;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+      color: rgba(255, 255, 255, 0.9);
+
+    }
+
+    .goto_dog{
+      width: 320px;
+      height: 45px;
+      border: 3px solid  rgba(255, 255, 255, 0.9);
+      position: absolute;
+      bottom: 180px;
+      left: 35px;
+      border-radius: 10px;
+
+      font-size: 25px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      line-height: 45px;
+      background-color:  rgba(255, 255, 255, 0.2);
+
+    }
+
+
+
+    .main_banner_cat{
+      width: 100%;
+      height: 450px;
+      background: url(../../img/mainbanner2.jpg)  center/cover no-repeat;
+    }
+    .title_cat{
+      width: 700PX;
+      height: 130PX;
+      position: absolute;
+      bottom: 30px;
+      right: 35px;
+      font-size: 40px;
+      font-weight: 900;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+      color: rgba(255, 255, 255, 0.9);
+      text-align: right;
+
+    }
+
+    .goto_cat{
+      width: 320px;
+      height: 45px;
+      border: 3px solid  rgba(255, 255, 255, 0.9);
+      position: absolute;
+      bottom: 180px;
+      right: 35px;
+      border-radius: 10px;
+
+      font-size: 25px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      line-height: 45px;
+      background-color:  rgba(255, 255, 255, 0.2);
+
+    }
+
+ /* < main_adopt> */
+ /* - 반려견 입양 메인 홍보 글 파트임
+      그리고 입양관련된 main 파트는 class 앞에 adopt_ 붙이기
+      반려견은 dog_ 붙이고 반려묘는 cat_ 붙여서 구분허가>
+ */
+                      
+/* 입양가능 반려견 */
+.adopt_title{
+  margin: 0 auto;
+  padding: 100px 0 0 0;
+  box-sizing: border-box;
+  font-size: 23px;
+  font-weight: 700;
+  text-align: center;
+  color: #414141;
+}
+
+.adopt_ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding-top: 80px;
+  margin: 0 200px;
+  justify-content: space-between;
+}
+.adopt_li{
+  width: calc(100%/3 - 30px);
+  background-color: #fffbf2;
+  position: relative;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.adopt_li:hover{
+  /*transform: translateY(-4px);*/
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.adopt_img_box{
+  width: 100%;
+  height: 400px;
+}
+
+.adopt_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ /* 입양가능 반려견/반려묘 부가 설명 파트 - 공통 */
+
+
+.ptitle_sbox{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.writer{
+  font-size: 14px;
+}
+
+.view_box{
+  display: flex;
+  gap: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+.btn_showMore{
+  width: 250px;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 700;
+
+  background-color: #ffe187;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.ptitle_box{
+  width: 100%;
+  height: 70px;
+  background-color: #d1dbca;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 18px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.btn_showMore:hover{
+  background-color:#f2bf4a ;
+}
+
+
+
+/* < main_adBanner_box> */
+/* 슬라이드 배너로 만들것임 */
+/* 두번째 메인 페이지에 들어가는 배너 인데 광고나 행사등에 관련된 아마자 넣을예정이라서 
+    ad 붙여서 adBanner 라고 기술함  */
+
+
+
+.main_adBanner_box{
+  width: 100%;
+  height: 400px;
+  margin-top: 150px;
+  position: relative;
+  /* overflow: hidden;
+  position: relative; */
+}
+.main_adBanner{
+  width: 100%;
+  height: 100%;
+  /* position: absolute;
+  top: 0;
+  transition: left 0.5s ease;  */
+
+}
+.adBanner1{
+  background-color: beige;
+}
+.adBanner2{
+   /*background-color: orange;*/
+
+}
+
+.swiperimg{
+  width: 100%;
+}
+
+/* <adopted_baby>  - 입양간 아이들 자랑 */
+
+.adopted_baby_title{
+  margin: 0 auto;
+  padding: 150px 0 10px 0;
+  box-sizing: border-box;
+  font-size: 23px;
+  font-weight: 700;
+  text-align: center;
+  color: #414141;
+}
+.adopted_baby_desc{
+  margin: 0 auto;
+  text-align: center;
+  border-top: 1px solid #c8deb8;
+  padding-top: 10px;
+  
+  font-size: 15px;
+  font-weight: 500;
+ 
+}
+.adopted_baby_ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 80px;
+  margin: 0 auto;
+  margin-left: 20px;
+  
+}
+.adopted_baby_li{
+  width: calc(100%/5 - 20px);
+  height: 300px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+}
+
+.adopted_baby_li:hover{
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.proud_img_box{
+  width: 100%;
+  height:300px;
+}
+
+.proud_title{
+  width:100%
+}
+
+.proud_desc{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* <supporters - 후원기업 
+     support_org (organize) 후원기업 이미지만 삽입하고 링크 걸어서 연결하기> */
+
+.supporters_title{
+  margin: 0 auto;
+  padding: 250px 0 10px 0;
+  box-sizing: border-box;
+  font-size: 23px;
+  font-weight: 700;
+  color: #414141;
+}
+
+.support_org_ul { /* 여기에 display: flex와 flex-wrap을 넣어줘! */
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  margin: 0 auto;
+}
+
+.support_org_li{
+  width: calc(100%/5);
+  height: 150px;
+
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.support_org_li > a > img{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ----------------------------------------- */
+/* -------------- < Footer > ----------------*/
+/* ----------------------------------------- */
+
+.footer_box{
+    margin-top: 60px;
+    width: 100%;
+    height: 300px;
+    background-color: #9e9e9e;
+}
+
+.footer_title{
+    color: white;
+    padding-top: 50px;
+}
+
+.fotter_info, .footer_name{
+    color: white;
+    margin: 20px 0;
+}
+
+.footer_role{
+    color: white;
+}
+
+
+img {
+  border: none;
+  border-radius: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

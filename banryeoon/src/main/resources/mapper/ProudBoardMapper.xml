@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bitstudy.app.mapper.ProudBoardMapper">
+<!--<mapper namespace="com.bitstudy.app.dao.ProudBoardMapper">-->
+    <!-- 게시글 목록 -->
+    <select id="selectAll" resultType="com.bitstudy.app.dto.ProudBoardDto">
+        SELECT * FROM Proud_board ORDER BY postId DESC
+    </select>
+
+    <!-- 게시글 상세 -->
+    <select id="selectById" parameterType="int" resultType="com.bitstudy.app.dto.ProudBoardDto">
+        SELECT * FROM Proud_board WHERE postId = #{postId}
+    </select>
+
+    <!-- 게시글 등록 -->
+    <insert id="insert" parameterType="com.bitstudy.app.dto.ProudBoardDto" useGeneratedKeys="true" keyProperty="postId">
+        INSERT INTO Proud_board ( postWriter, postTitle, postContent, postPic, postTime)
+        VALUES (#{postWriter}, #{postTitle}, #{postContent}, #{postPic}, #{postTime})
+    </insert>
+
+    <!-- 게시글 수정 -->
+    <update id="update" parameterType="com.bitstudy.app.dto.ProudBoardDto">
+        UPDATE Proud_board
+        SET postTitle = #{postTitle},
+            postContent = #{postContent},
+            postPic = #{postPic}
+        WHERE postId = #{postId}
+    </update>
+
+    <!-- 게시글 삭제 -->
+    <delete id="delete" parameterType="int">
+        DELETE FROM Proud_board WHERE postId = #{postId}
+    </delete>
+
+    <!-- 게시글 전체 개수 -->
+    <select id="count" resultType="int" parameterType="com.bitstudy.app.dto.ProudBoardDto">
+        SELECT COUNT(*) FROM Proud_board
+    </select>
+
+    <!-- 페이징 게시글 목록 -->
+    <select id="selectPage" resultType="com.bitstudy.app.dto.ProudBoardDto">
+        SELECT * FROM Proud_board
+        ORDER BY postId DESC
+            LIMIT #{offset}, #{pageSize}
+    </select>
+
+
+    <!-- 조회수 증가 -->
+    <update id="increaseViewCount" parameterType="int">
+        UPDATE Proud_board
+        SET postView = postView + 1
+        WHERE postId = #{postId}
+    </update>
+
+    <!-- 키워드 검색 -->
+    <select id="search" parameterType="map" resultType="com.bitstudy.app.dto.ProudBoardDto">
+        SELECT * FROM Proud_board
+        <where>
+            <if test="keyword != null and keyword != ''">
+                <choose>
+                    <when test='type == "title"'>  <!-- type 파라미터와 문자열 비교 -->
+                        postTitle LIKE CONCAT('%', #{keyword}, '%')
+                    </when>
+                    <when test='type == "content"'>
+                        postContent LIKE CONCAT('%', #{keyword}, '%')
+                    </when>
+                    <when test='type == "writer"'>
+                        postWriter LIKE CONCAT('%', #{keyword}, '%')
+                    </when>
+                    <otherwise>
+                        (postTitle LIKE CONCAT('%', #{keyword}, '%')
+                        OR postContent LIKE CONCAT('%', #{keyword}, '%')
+                        OR postWriter LIKE CONCAT('%', #{keyword}, '%'))
+                    </otherwise>
+                </choose>
+            </if>
+        </where>
+        ORDER BY postId DESC
+    </select>
+
+
+
+
+
+
+
+
+    <!--  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡadmin  -->
+<!--    ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+
+
+
+
+
+    <!-- proud_board 정보 다 불러오는 코드 -->
+    <!--  selectAll랑 다른 점. 이건 postId 없이 걍 다 불러옴  -->
+    <select id="selectAllproud" parameterType="string" resultType="com.bitstudy.app.dto.ProudBoardDto">
+        SELECT * FROM Proud_board ORDER BY postId DESC;
+    </select>
+
+    <select id="AdminselectPostCount" resultType="int">
+        SELECT COUNT(*)
+        FROM banryeoon_db.Proud_board
+        <!-- WHERE 조건이 없음 = 전체 개수 조회 -->
+    </select>
+    <!-- 페이지네이션에 쓸 목록 조회 (offset, limit용) -->
+    <select id="AdminselectPostList" parameterType="map" resultType="com.bitstudy.app.dto.ProudBoardDto">
+        SELECT *
+        FROM banryeoon_db.Proud_board
+        ORDER BY postId DESC
+            LIMIT #{offset}, #{limit}
+    </select>
+
+    <!-- 게시글 제목으로 상품 게시글 검색 -->
+    <select id="searchPostByTitle" parameterType="string" resultType="com.bitstudy.app.dto.ProudBoardDto">
+        SELECT * FROM banryeoon_db.Proud_board WHERE postTitle LIKE CONCAT('%', #{postTitle}, '%')
+    </select>
+
+
+    <!-- 게시글 작성자로 게시글 검색 -->
+    <select id="searchPostByWriter" parameterType="string" resultType="com.bitstudy.app.dto.ProudBoardDto">
+        SELECT * FROM banryeoon_db.Proud_board WHERE postWriter LIKE CONCAT('%', #{postWriter}, '%')
+    </select>
+
+
+    <!-- 작성자 또는 제목으로 게시글 검색 -->
+    <select id="searchPostByWriterAndTitle" parameterType="string" resultType="com.bitstudy.app.dto.ProudBoardDto">
+
+        SELECT *
+        FROM banryeoon_db.Proud_board
+        WHERE postWriter LIKE CONCAT('%', #{keyword}, '%')
+           OR postTitle  LIKE CONCAT('%', #{keyword}, '%')
+    </select>
+
+    <!-- 조회수 1 증가 -->
+    <update id="incrementViews" parameterType="int">
+        UPDATE proud_board
+        SET postView = postView + 1
+        WHERE id = #{postId}
+    </update>
+
+
+
+</mapper>

@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'LINESeedKR-Bd';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* 모든 페이지에 공통적으로 들어가는 코드 */
+
+body {
+    margin: 0;
+    font-family: 'LINESeedKR-Bd';
+}
+
+ul{
+    list-style: none;
+    padding:0;
+    margin: 0;
+  }
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+  .blind{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  /* content_box - 전체 영역 잡는 박스 */
+  .content_box{
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+   /* area_box - 중앙 영역 잡는 박스 */
+  .area_box{
+    max-width: 70%;
+    margin: 0 auto;
+  }
