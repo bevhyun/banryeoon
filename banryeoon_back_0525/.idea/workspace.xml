@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="app:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d14896a3-9ae9-4c5a-95a1-61d2ffd78825" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2HdN0FxlwH44SKb8zYvuWMRKfj0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP 요청.generated-requests | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP 요청.generated-requests | #4.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex03_BoardDaoImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex03_BoardDaoImplTest.select.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex05_BoardDaoImplTest.count.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex05_BoardDaoImplTest.deleteAll.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex05_BoardDaoImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex05_BoardDaoImplTest.increaseViewCount.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex05_BoardDaoImplTest.insert.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex05_BoardDaoImplTest.insertTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex05_BoardDaoImplTest.selectPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex05_BoardDaoImplTest.update.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex12_1_BoardDaoImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex12_1_BoardDaoImplTest.insertTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex12_1_BoardDaoImplTest.searchSelectCount.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex12_1_BoardDaoImplTest.searchSelectPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex14_2_CommentDaoImplTest.count.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex14_2_CommentDaoImplTest.deleteAll.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex14_2_CommentDaoImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex14_2_CommentDaoImplTest.insert.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex14_2_CommentDaoImplTest.insertMock.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex14_2_CommentDaoImplTest.select.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex14_2_CommentDaoImplTest.selectAll.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex14_2_CommentDaoImplTest.truncate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex14_2_CommentDaoImplTest.update.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTest.listUsers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.deleteAll.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.deleteUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.insertUserAndSelectUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.setUp.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.updateUser.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.app [clean].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat 서버.Tomcat 9.0.104.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/d_board&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;라이브러리&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;redshift&quot;,
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\board\src\main\resources\mapper" />
+      <recent name="C:\Users\user1\Desktop\spring\ch3\board\src\main\webapp\resources" />
+      <recent name="C:\Users\user1\Desktop\spring\ch3\board\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Users\Jun\IdeaProjects\board\src\main\resources" />
+      <recent name="C:\Users\Jun\IdeaProjects\board\src\main\java\com\bitstudy\app" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user1\Desktop\new\spring\ch3\board\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Users\user1\Desktop\new\spring\ch3\board\src\main\webapp\resources\css" />
+      <recent name="C:\Users\user1\Desktop\new\spring\ch3\board\src\main\webapp\resources" />
+      <recent name="C:\Users\user1\Desktop\new\spring\ch3\board\src\main\webapp" />
+      <recent name="C:\Users\user1\Desktop\new\spring\ch3\board\src\main\webapp\resources\static" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.bitstudy.app.dao" />
+      <recent name="com.bitstudy.app.domain" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.bitstudy.app.dao" />
+      <recent name="com.bitstudy.app.domain" />
+      <recent name="com.bitstudy.app" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.bitstudy.app.dao" />
+      <recent name="com.bitstudy.app.controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bitstudy.app.controller" />
+      <recent name="com.bitstudy.app.dao" />
+      <recent name="com.bitstudy.app.dto" />
+      <recent name="com.bitstudy.app.service" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat 서버.Tomcat 9.0.104">
+    <configuration name="UserDaoImplTest.deleteAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bitstudy.app.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bitstudy.app.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.bitstudy.app.dao.UserDaoImplTest" />
+      <option name="METHOD_NAME" value="deleteAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoImplTest.deleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bitstudy.app.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bitstudy.app.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.bitstudy.app.dao.UserDaoImplTest" />
+      <option name="METHOD_NAME" value="deleteUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoImplTest.insertUserAndSelectUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bitstudy.app.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bitstudy.app.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.bitstudy.app.dao.UserDaoImplTest" />
+      <option name="METHOD_NAME" value="insertUserAndSelectUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoImplTest.setUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bitstudy.app.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bitstudy.app.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.bitstudy.app.dao.UserDaoImplTest" />
+      <option name="METHOD_NAME" value="setUp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoImplTest.updateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bitstudy.app.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bitstudy.app.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.bitstudy.app.dao.UserDaoImplTest" />
+      <option name="METHOD_NAME" value="updateUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.104" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.104" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="app:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="42e5f770-7928-4f3e-bace-f183ce370547" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="AppServerDebuggerRunner">
+        <option name="DEBUG_PORT" value="56786" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52112" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="AppServerDebuggerRunner">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="app:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.UserDaoImplTest.deleteAll" />
+      <item itemvalue="JUnit.UserDaoImplTest.deleteUser" />
+      <item itemvalue="JUnit.UserDaoImplTest.insertUserAndSelectUser" />
+      <item itemvalue="JUnit.UserDaoImplTest.setUp" />
+      <item itemvalue="JUnit.UserDaoImplTest.updateUser" />
+      <item itemvalue="Tomcat 서버.Tomcat 9.0.104" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserDaoImplTest.deleteAll" />
+        <item itemvalue="JUnit.UserDaoImplTest.updateUser" />
+        <item itemvalue="JUnit.UserDaoImplTest.deleteUser" />
+        <item itemvalue="JUnit.UserDaoImplTest.insertUserAndSelectUser" />
+        <item itemvalue="JUnit.UserDaoImplTest.setUp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d14896a3-9ae9-4c5a-95a1-61d2ffd78825" name="Changes" comment="" />
+      <created>1668610776601</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668610776601</updated>
+      <workItem from="1668610777951" duration="1565000" />
+      <workItem from="1746683625467" duration="196000" />
+      <workItem from="1746683836674" duration="11803000" />
+      <workItem from="1746750133284" duration="3305000" />
+      <workItem from="1746762131823" duration="12085000" />
+      <workItem from="1747007669398" duration="20655000" />
+      <workItem from="1747033508014" duration="6997000" />
+      <workItem from="1747096088006" duration="26791000" />
+      <workItem from="1747355546968" duration="48000" />
+      <workItem from="1747356444602" duration="10781000" />
+      <workItem from="1747699915585" duration="20000" />
+      <workItem from="1747700315479" duration="91000" />
+      <workItem from="1747700706683" duration="5000" />
+      <workItem from="1747701520137" duration="21000" />
+      <workItem from="1747701886236" duration="59000" />
+      <workItem from="1747704217860" duration="8000" />
+      <workItem from="1747707853551" duration="633000" />
+      <workItem from="1747708667158" duration="33000" />
+      <workItem from="1747708739883" duration="21000" />
+      <workItem from="1747728666291" duration="2593000" />
+      <workItem from="1747785858680" duration="383000" />
+      <workItem from="1747786269117" duration="1274000" />
+      <workItem from="1747798689931" duration="1653000" />
+      <workItem from="1747804360937" duration="12370000" />
+      <workItem from="1747872920899" duration="2553000" />
+      <workItem from="1747876641404" duration="1147000" />
+      <workItem from="1747878342212" duration="14396000" />
+      <workItem from="1747894412576" duration="18265000" />
+      <workItem from="1747927435589" duration="7848000" />
+      <workItem from="1747972135742" duration="12761000" />
+      <workItem from="1748014405475" duration="15275000" />
+      <workItem from="1748068868155" duration="1514000" />
+      <workItem from="1748082602760" duration="4505000" />
+      <workItem from="1748099254423" duration="21091000" />
+      <workItem from="1748153819051" duration="13127000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
